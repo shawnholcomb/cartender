@@ -1,3 +1,5 @@
+#NOTE: Change password in config file for the db
+
 # Project 2
 ![Image goes here](http://)<br/>
 Shawn Holcomb, Eryn Monestero, Julio Balbuena
