@@ -8,6 +8,13 @@ module.exports = function (app) {
     })
   });
 
+  // Load about page
+  app.get("/about", function (req, res) {
+    res.render("about", {
+      title: "Cartender - Maintenance Reminders made Easy"
+    })
+  });
+
   // Load example page and pass in an example by id
   app.get("/example/:id", function (req, res) {
     db.vehicles.findOne({ where: { id: req.params.id } }).then(function (dbVehicles) {
