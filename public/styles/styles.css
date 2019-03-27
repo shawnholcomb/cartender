@@ -30,13 +30,13 @@ nav li a {
 #get-started {
   background: #ff0051;
   padding-right: 16px;
-  border-radius: 18px 0 0 18px;
+  border-radius: 12px 0 0 12px;
   margin-left: 10px;
   box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.25);
 }
 
 #get-started:hover {
-  background: #e4004c;
+  background: #666;
   box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.4);
 }
 
@@ -66,13 +66,38 @@ nav li a {
   text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.4);
 }
 
+/* about section */
+
+.about {
+  background: #f5f5f5;
+}
+
+.bold-car {
+  margin-right: 2px;
+}
+
+card {
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+.card-icon {
+  color: #ff0051;
+  font-size: 50px;
+  margin: 0px 20px;
+}
+
 /* footer */
 
 footer {
-  background: #f5f5f5;
+  background: #fff  ;
   padding-top: 15px;
   color: #ff0051;
-  font-size: 14px;
+  font-size: 16px;
+}
+
+footer i {
+  font-size: 26px;
+  margin-right: 20px;
 }
 
 footer a {
@@ -80,8 +105,24 @@ footer a {
 }
 
 footer a:hover {
-  color: #e4004c;
-  text-decoration: underline;
+  color: #666;
+  text-decoration: none;
+}
+
+#bolder {
+  font-weight: bold;
+  margin-right: 1px;
+}
+
+.apple {
+  width: 10%;
+  height: 10%;
+  margin-right: 10px;
+}
+
+.google {
+  width: 11%;
+  height: 11%;
 }
 
 /* modal */
@@ -103,16 +144,16 @@ border-color: #ff0051;
 }
 
 #create-account:hover {
-  background: #e4004c;
+  background: #666;
   box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.4);
 }
 
 #account {
-  color: #444;
+  color: #666;
 }
 
 #account h6:hover {
-  color: #e4004c;
+  color: #666;
   text-decoration: underline;
 }
 
@@ -151,25 +192,4 @@ border-color: #ff0051;
 #home:hover {
   color: #e4004c;
   text-decoration: underline;
-}
-
-/* about page */
-
-#about-bg {
-  width: 100%;
-  padding: 0;
-}
-
-.bold-car {
-  margin-right: 2px;
-}
-
-card {
-  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.25);
-}
-
-.card-icon {
-  color: #ff0051;
-  font-size: 50px;
-  margin: 0px 20px;
 }
