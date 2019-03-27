@@ -1,7 +1,7 @@
 #NOTE: Change password in config file for the db
 
 # Cartender
-![Cartender Logo](http://i66.tinypic.com/eapjdc.jpg)<br/>
+![Cartender Logo](http://i65.tinypic.com/2ptcuba.jpg)<br/>
 Shawn Holcomb, Eryn Monestero, Julio Balbuena
 
 # Description
