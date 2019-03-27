@@ -2,6 +2,7 @@ body {
   font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
 }
+ /* navbar items */
 
 .navbar {
   padding-right: 0;
@@ -26,17 +27,19 @@ nav li a {
   padding-right: 16px;
   border-radius: 18px 0 0 18px;
   margin-left: 10px;
-  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.25);
 }
 
 #get-started:hover {
-  background: #f22c4e;
-  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8);
+  background: #e4004c;
+  box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.8);
 }
 
 #get-started a {
   color: #fff;
 }
+
+/* jumbotron */
 
 .jumbotron {
   height: 68vh;
@@ -56,8 +59,10 @@ nav li a {
 }
 
 .jum-text {
-  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+  text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.4);
 }
+
+/* footer */
 
 footer {
   background: #f5f5f5;
@@ -71,6 +76,70 @@ footer a {
 }
 
 footer a:hover {
-  color: #f22c4e;
+  color: #e4004c;
+  text-decoration: underline;
+}
+
+/* modal */
+input:focus {
+border-color: #ff0051;
+}
+
+.form-control {
+  padding: 30px 10px; 
+}
+
+#create-account {
+  width: 100%;
+  background: #ff0051;
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+#account {
+  color: #444;
+}
+
+#account:hover {
+  color: #e4004c;
+  text-decoration: underline;
+}
+
+/* 404 page */
+
+#logo {
+  background: #000;
+}
+
+#fail-page {
+  padding: 0px;
+  border-radius: 0px;
+  width: 100vw;
+  height: 100vh;
+  background: url("/images/404-bg.jpg") center center no-repeat;
+  background-size: cover;
+}
+
+#fail-page p {
+  text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.4);
+}
+
+#fail-header {
+  font-size: 125px;
+}
+
+#oops {
+  font-size: 1.5rem;
+}
+
+#home {
+  font-size: 1.5rem;
+  color: #ff0051;
+}
+
+#home:hover {
+  color: #e4004c;
   text-decoration: underline;
 }
