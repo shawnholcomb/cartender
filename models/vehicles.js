@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  var vehicels = sequelize.define("vehicles", {
+  var vehicle = sequelize.define("vehicle", {
     make: {
       type: DataTypes.STRING,
       allowNull: false
@@ -33,5 +33,5 @@ module.exports = function(sequelize, DataTypes) {
     allowNull: true
   }
   });
-  return vehicels;
+  return vehicle;
 };
