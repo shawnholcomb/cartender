@@ -1,6 +1,7 @@
 body {
   font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
+  color: #262626;
 }
 
 a {
@@ -36,8 +37,11 @@ nav li a {
 }
 
 #get-started:hover {
-  background: #666;
   box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.4);
+}
+
+#get-started:active {
+  background: #e4004c;
 }
 
 #get-started a {
@@ -59,7 +63,7 @@ nav li a {
 
 #phone {
   height: 55vh;
-  background: url("/images/phone-body.png") center no-repeat;
+  background: url("/images/phone-app.gif") center no-repeat;
 }
 
 .jum-text {
@@ -91,12 +95,12 @@ card {
 footer {
   background: #fff  ;
   padding-top: 15px;
-  color: #ff0051;
+  color: #262626;
   font-size: 16px;
 }
 
 footer i {
-  font-size: 26px;
+  font-size: 30px;
   margin-right: 20px;
 }
 
@@ -105,7 +109,7 @@ footer a {
 }
 
 footer a:hover {
-  color: #666;
+  color: #262626;
   text-decoration: none;
 }
 
@@ -125,16 +129,18 @@ footer a:hover {
   height: 11%;
 }
 
-/* modal */
-input:focus {
-border-color: #ff0051;
+.fa-coffee {
+  margin-right: 0;
 }
+
+/* modal */
 
 .form-control {
   padding: 30px 10px; 
 }
 
-#create-account {
+#create-account,
+#signin-button {
   width: 100%;
   background: #ff0051;
   color: #fff;
@@ -143,31 +149,63 @@ border-color: #ff0051;
   box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.25);
 }
 
-#create-account:hover {
-  background: #666;
+#create-account:hover,
+#signin-button:hover {
   box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.4);
 }
 
+#create-account:active,
+#signin-button:active {
+  background: #e4004c;
+}
+
 #account {
-  color: #666;
+  color: #262626;
 }
 
 #account h6:hover {
-  color: #666;
   text-decoration: underline;
+}
+
+#signup {
+  color: #ff0051;
+}
+
+#signup h6:hover {
+  color: #262626;
+  text-decoration: underline;
+}
+
+#signin-toggle {
+  display: none;
 }
 
 /* 404 page */
 
-#logo {
-  background: #000;
+#logo-404 {
+  padding-top: 13px;
+  margin-left: 64px;
+
+}
+
+#logo-404 a {
+  color: #fff;
+}
+
+#logo-404 a:hover {
+  color: #ff0051;
+  text-decoration: none;
+}
+
+#logo-404 a:active {
+  color: #e4004c;
 }
 
 #fail-page {
   padding: 0px;
   border-radius: 0px;
   width: 100vw;
-  height: 100vh;
+  min-height: 85vh;
   background: url("/images/404-bg.jpg") center center no-repeat;
   background-size: cover;
 }
@@ -178,10 +216,12 @@ border-color: #ff0051;
 
 #fail-header {
   font-size: 125px;
+  color: #f5f5f5;
 }
 
 #oops {
   font-size: 1.5rem;
+  color: #f5f5f5;
 }
 
 #home {
@@ -190,6 +230,9 @@ border-color: #ff0051;
 }
 
 #home:hover {
-  color: #e4004c;
   text-decoration: underline;
+}
+
+#home:active {
+  color: #e4004c;
 }
