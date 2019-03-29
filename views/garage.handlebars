@@ -1,0 +1,95 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="d-flex flex-grow-1">
+    <span class="w-100 d-lg-none d-block">
+      <!-- hidden spacer to center brand on mobile --></span>
+    <a class="navbar-brand nav-logo ml-5" href="/"><span id="logo-bold">CAR</span>tender</a>
+    <div class="w-100 text-right">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </div>
+  <div class="collapse navbar-collapse flex-grow-1 text-right " id="navbarText">
+    <ul class="navbar-nav ml-auto flex-nowrap">
+      <li class="nav-item">
+        <div id="get-started">
+          <a class="nav-link" data-toggle="modal" data-target=".addVehicle-modal">Add Vehicle <i
+              class="fas fa-angle-double-right"></i></a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="modal fade addVehicle-modal" tabindex="-1" role="dialog" aria-labelledby="addVehicleModal" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content p-5">
+      <div id="addVhicle-toggle">
+        <button type="button" class="close text-right" data-dismiss="modal" aria-label="Close">
+          <span caria-hidden="true">&times;</span>
+        </button>
+        <h2 class="font-weight-bold mb-4">Add Vehicle</h2>
+        <h5 class="mb-4">Simply submit your vehicle info to get started</h5>
+
+        <div class="input-group mb-4">
+          <input type="text" id="make" class="form-control" aria-label="make" placeholder="Make"
+            aria-describedby="inputGroup-sizing-default" name="make">
+        </div>
+
+        <div class="input-group mb-4">
+          <input type="text" id="model" class="form-control" aria-label="model" placeholder="Model"
+            aria-describedby="inputGroup-sizing-default" name="model">
+        </div>
+
+        <div class="input-group mb-4">
+          <input type="text" id="year" class="form-control" aria-label="year" placeholder="Year"
+            aria-describedby="inputGroup-sizing-default" name="year">
+        </div>
+
+        <div class="input-group mb-4">
+          <input type="text" id="registration" class="form-control" aria-label="registration" placeholder="Registration Number"
+            aria-describedby="inputGroup-sizing-default" name="registration">
+        </div>
+
+        <div class="input-group mb-4">
+          <input type="plate" id="plate" class="form-control" aria-label="make" placeholder="Plate Number"
+            aria-describedby="inputGroup-sizing-default" name="plate">
+        </div>
+
+        <div class="input-group mb-4">
+          <input type="text" id="last-oil-change" class="form-control" aria-label="last-oil-change" placeholder="Last Oil Change"
+            aria-describedby="inputGroup-sizing-default" name="last-oil-change">
+        </div>
+        <h6><span id="wrongInfo"></span></h6>
+        <a href="/garage">
+          <button class="mb-3" id="submit" name="submit">Submit</button>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-4">
+      <h4>Owner: {{this.owner}}</h4>
+    <div class="list-group" id="list-tab" role="tablist">
+      <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home"><i class="fas fa-file-alt" style="font-size: 150%"></i>Information</a>
+      <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile"><i class="fas fa-oil-can" style="font-size: 150%"></i>Services</a>
+      <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages"><i class="fas fa-gas-pump" style="font-size: 150%"></i>Gas</a>
+      <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Settings</a>
+    </div>
+  </div>
+  <div class="col-8">
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">...</div>
+      <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">...</div>
+      <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">sfdjisfd sfjisdf sfjsfjefw sfeljsfelj</div>
+      <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">...</div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
