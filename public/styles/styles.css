@@ -62,8 +62,9 @@ nav li a {
 }
 
 #phone {
-  height: 55vh;
+  /* height: 55vh; */
   background: url("/images/phone-app.gif") center no-repeat;
+  background-size: contain;
 }
 
 .jum-text {
@@ -235,4 +236,66 @@ footer a:hover {
 
 #home:active {
   color: #e4004c;
+}
+
+@media screen and (max-width: 1199px) {
+  .display-3 {
+    font-size: 4rem;
+  }
+
+  .display-4 {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .display-3 {
+    font-size: 3rem;
+  }
+
+  .display-4 {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .display-3 {
+    font-size: 2rem;
+  }
+
+  .card-icon {
+    font-size: 40px;
+  }
+
+  .card h4 {
+    font-size: 1.2rem;
+    margin-left: 10px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .row {
+    margin: 0 auto;
+  }
+
+  #phone {
+    min-height: 500px;
+  }
+
+  .display-3 {
+    font-size: 2rem;
+  }
+
+  .display-4 {
+    font-size: 1.5rem;
+  }
+
+  .card-icon {
+    font-size: 35px;
+    margin: 0;
+  }
+
+  .card h4 {
+    font-size: 1rem;
+  }
 }
