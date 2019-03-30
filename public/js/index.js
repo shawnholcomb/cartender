@@ -11,8 +11,17 @@ $("#signup").on("click", function () {
 });
 
 // Function to toggle add car modal
+
 $("#addCar").on("click", function() {
   $("#addVehicle-toggle").toggle();
+})
+
+// Functions to toggle car details open/closed
+
+$(".vehicle-name").on("click", function() {
+  $("#open-plus").toggle();
+  $("#close-minus").toggle();
+  $(".vehicle-details").toggle();
 })
 
   // $("#submit").on("click", ((e) => {
