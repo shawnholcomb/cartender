@@ -4,25 +4,163 @@
       <!-- hidden spacer to center brand on mobile --></span>
     <a class="navbar-brand nav-logo ml-5" href="/"><span id="logo-bold">CAR</span>tender</a>
     <div class="w-100 text-right">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
-        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
     </div>
-  </div>
-  <div class="collapse navbar-collapse flex-grow-1 text-right " id="navbarText">
-    <ul class="navbar-nav ml-auto flex-nowrap">
-      <li class="nav-item">
-        <div id="get-started">
-          <a class="nav-link" data-toggle="modal" data-target=".addVehicle-modal">Add Vehicle <i
-              class="fas fa-angle-double-right"></i></a>
-        </div>
-      </li>
-    </ul>
   </div>
 </nav>
 
-<div class="modal fade addVehicle-modal" tabindex="-1" role="dialog" aria-labelledby="addVehicleModal" aria-hidden="true">
+<div class="garage-body">
+  <div class="row no-gutters garage-body-row">
+    <div class="col-2 pl-3 pr-0 bg-white garage-column">
+      <div id="add-new">
+        <a class="nav-link" data-toggle="modal" data-target=".addVehicle-modal"><i class="fas fa-plus"></i>Add
+          Vehicle</a>
+      </div>
+
+      <div class="list-group" id="list-tab" role="tablist">
+        <a class="list-group-item list-group-item-action active" id="list-garage-list" data-toggle="list"
+          href="#list-garage" role="tab" aria-controls="home"><i class="fas fa-file-alt"></i>My Garage</a>
+        <a class="list-group-item list-group-item-action" id="list-fuel-list" data-toggle="list" href="#list-fuel"
+          role="tab" aria-controls="messages"><i class="fas fa-gas-pump"></i>Find Fuel</a>
+        <a class="list-group-item list-group-item-action" id="list-shops-list" data-toggle="list" href="#list-shops"
+          role="tab" aria-controls="profile"><i class="fas fa-oil-can"></i>Find Shops</a>
+        <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list"
+          href="#list-settings" role="tab" aria-controls="settings"><i class="fas fa-cog"></i>Settings</a>
+      </div>
+    </div>
+    <div class="col-10">
+      <div class="profile mx-0">
+        <div class="row no-gutters">
+          <div class="col-2 profile-image">
+            <img src="/images/profile-image.jpg" id="prof-pic">
+          </div>
+          <div class="col-10 profile-text">
+            <h2>John's Garage</h2>
+            <h2>2 Vehicles</h2>
+            <h3>0 notifications</h3>
+          </div>
+        </div>
+      </div>
+      <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="list-garage" role="tabpanel" aria-labelledby="list-garage-list">
+
+          {{#each vehicles}}
+
+          <div class="vehicle">
+            <div class="row no-gutters vehicle-name pt-2">
+              <div class="mx-3 open-close" id="open-plus">
+                <h1>+</h1>
+              </div>
+              <div class="mx-3 open-close" id="close-minus">
+                <h1>-</h1>
+              </div>
+              <div class="my-auto">
+                <h3>2015 Kia Soul {{this.year}} {{this.make}} {{this.model}}</h3>
+              </div>
+            </div>
+            <div class="row no-gutters ind-vehicle">
+              <table class="vehicle-details">
+                <tr>
+                  <td>VIN:</td>
+                  <td>1234TEST8675309AB {{this.vin}}</td>
+                </tr>
+                <tr>
+                  <td>License Plate:</td>
+                  <td>ABC1234 {{this.plate}}</td>
+                </tr>
+                <tr>
+                  <td>Registration Exp:</td>
+                  <td>10/19 {{this.registration}}</td>
+                </tr>
+                <tr>
+                  <td>Last Oil Change:</td>
+                  <td>
+                    <table class="inner-table">
+                      <tr>
+                        <td>Date:</td>
+                        <td>02/24/2019 {{this.last_oil_change}}</td>
+                      </tr>
+                      <tr>
+                        <td> Mileage:</td>
+                        <td>67050{{need to create this}}</td>
+                      </tr>
+                      <tr>
+                        <td><button class="reminder" id="oil-change-reminder">Set Reminder</button></td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Tires</td>
+                  <td>
+                    <table class="inner-table">
+                      <tr>
+                        <td>Date:</td>
+                        <td>09/27/2018 {{need to create this}}</td>
+                      </tr>
+                      <tr>
+                        <td> Mileage:</td>
+                        <td>59863 {{need to create this}} </td>
+                      </tr>
+                    </table>
+                  </td>
+              </table>
+            </div>
+          </div>
+
+          {{/each}}
+
+        </div>
+        <div class="tab-pane fade" id="list-fuel" role="tabpanel" aria-labelledby="list-fuel-list">
+          <p>This is the fuel section</p>
+        </div>
+        <div class="tab-pane fade" id="list-shops" role="tabpanel" aria-labelledby="list-shops-list">
+          <h1 class="m-4">THIS PAGE IS UNDER CONSTRUCTION</p>
+        </div>
+        <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
+          <h1 class="m-4">THIS PAGE IS UNDER CONSTRUCTION</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="modal fade addVehicle-modal" tabindex="-1" role="dialog" aria-labelledby="addVehicleModal"
+  aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content p-5">
       <div id="addVhicle-toggle">
@@ -32,13 +170,12 @@
         <h2 class="font-weight-bold mb-4">Add Vehicle</h2>
         <h5 class="mb-4">Simply submit your vehicle info to get started</h5>
 
-        <form action="/api/garage" method="POST">
         <div class="input-group mb-4">
           <input type="text" id="make" class="form-control" aria-label="make" placeholder="Make"
             aria-describedby="inputGroup-sizing-default" name="make">
         </div>
 
-        <div class="input-group mb-4">
+        <div class="ingit ut-group mb-4">
           <input type="text" id="model" class="form-control" aria-label="model" placeholder="Model"
             aria-describedby="inputGroup-sizing-default" name="model">
         </div>
@@ -49,13 +186,8 @@
         </div>
 
         <div class="input-group mb-4">
-          <input type="text" id="registration" class="form-control" aria-label="registration" placeholder="Registration Number"
-            aria-describedby="inputGroup-sizing-default" name="registration">
-        </div>
-        
-        <div class="input-group mb-4">
-          <input type="text" id="vin" class="form-control" aria-label="vin" placeholder="Vin Number"
-            aria-describedby="inputGroup-sizing-default" name="vin">
+          <input type="text" id="registration" class="form-control" aria-label="registration"
+            placeholder="Registration Number" aria-describedby="inputGroup-sizing-default" name="registration">
         </div>
 
         <div class="input-group mb-4">
@@ -64,39 +196,14 @@
         </div>
 
         <div class="input-group mb-4">
-          <input type="text" id="last-oil-change" class="form-control" aria-label="last-oil-change" placeholder="Last Oil Change"
-            aria-describedby="inputGroup-sizing-default" name="lastOilChange">
+          <input type="text" id="last-oil-change" class="form-control" aria-label="last-oil-change"
+            placeholder="Last Oil Change" aria-describedby="inputGroup-sizing-default" name="last-oil-change">
         </div>
         <h6><span id="wrongInfo"></span></h6>
         <a href="/garage">
           <button class="mb-3" id="submit" name="submit">Submit</button>
         </a>
-        </form>
       </div>
     </div>
   </div>
 </div>
-
-
-<div class="row">
-  <div class="col-4">
-      <h4>Owner: {{this.owner}}</h4>
-    <div class="list-group" id="list-tab" role="tablist">
-      <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home"><i class="fas fa-file-alt" style="font-size: 150%"></i>Information</a>
-      <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile"><i class="fas fa-oil-can" style="font-size: 150%"></i>Services</a>
-      <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages"><i class="fas fa-gas-pump" style="font-size: 150%"></i>Gas</a>
-      <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Settings</a>
-    </div>
-  </div>
-  <div class="col-8">
-    <div class="tab-content" id="nav-tabContent">
-      <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">...</div>
-      <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">...</div>
-      <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">sfdjisfd sfjisdf sfjsfjefw sfeljsfelj</div>
-      <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">...</div>
-    </div>
-  </div>
-</div>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>
