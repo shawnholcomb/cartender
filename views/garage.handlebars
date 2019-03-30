@@ -54,22 +54,22 @@
                 <h1>-</h1>
               </div>
               <div class="my-auto">
-                <h3>2015 Kia Soul {{this.year}} {{this.make}} {{this.model}}</h3>
+                <h3>{{this.year}} {{this.make}} {{this.model}}</h3>
               </div>
             </div>
             <div class="row no-gutters ind-vehicle">
               <table class="vehicle-details">
                 <tr>
                   <td>VIN:</td>
-                  <td>1234TEST8675309AB {{this.vin}}</td>
+                  <td>{{this.vin}}</td>
                 </tr>
                 <tr>
                   <td>License Plate:</td>
-                  <td>ABC1234 {{this.plate}}</td>
+                  <td>{{this.plate}}</td>
                 </tr>
                 <tr>
                   <td>Registration Exp:</td>
-                  <td>10/19 {{this.registration}}</td>
+                  <td>{{this.registration}}</td>
                 </tr>
                 <tr>
                   <td>Last Oil Change:</td>
@@ -77,11 +77,11 @@
                     <table class="inner-table">
                       <tr>
                         <td>Date:</td>
-                        <td>02/24/2019 {{this.last_oil_change}}</td>
+                        <td>{{this.last_oil_change}}</td>
                       </tr>
                       <tr>
                         <td> Mileage:</td>
-                        <td>67050{{need to create this}}</td>
+                        <td>{{need to create this}}</td>
                       </tr>
                       <tr>
                         <td><button class="reminder" id="oil-change-reminder">Set Reminder</button></td>
@@ -95,11 +95,11 @@
                     <table class="inner-table">
                       <tr>
                         <td>Date:</td>
-                        <td>09/27/2018 {{need to create this}}</td>
+                        <td>{{need to create this}}</td>
                       </tr>
                       <tr>
                         <td> Mileage:</td>
-                        <td>59863 {{need to create this}} </td>
+                        <td>{{need to create this}} </td>
                       </tr>
                     </table>
                   </td>
@@ -124,40 +124,6 @@
   </div>
 
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <div class="modal fade addVehicle-modal" tabindex="-1" role="dialog" aria-labelledby="addVehicleModal"
   aria-hidden="true">
