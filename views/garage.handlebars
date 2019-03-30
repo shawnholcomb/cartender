@@ -32,6 +32,7 @@
         <h2 class="font-weight-bold mb-4">Add Vehicle</h2>
         <h5 class="mb-4">Simply submit your vehicle info to get started</h5>
 
+        <form action="/api/garage" method="POST">
         <div class="input-group mb-4">
           <input type="text" id="make" class="form-control" aria-label="make" placeholder="Make"
             aria-describedby="inputGroup-sizing-default" name="make">
@@ -51,6 +52,11 @@
           <input type="text" id="registration" class="form-control" aria-label="registration" placeholder="Registration Number"
             aria-describedby="inputGroup-sizing-default" name="registration">
         </div>
+        
+        <div class="input-group mb-4">
+          <input type="text" id="vin" class="form-control" aria-label="vin" placeholder="Vin Number"
+            aria-describedby="inputGroup-sizing-default" name="vin">
+        </div>
 
         <div class="input-group mb-4">
           <input type="plate" id="plate" class="form-control" aria-label="make" placeholder="Plate Number"
@@ -59,12 +65,13 @@
 
         <div class="input-group mb-4">
           <input type="text" id="last-oil-change" class="form-control" aria-label="last-oil-change" placeholder="Last Oil Change"
-            aria-describedby="inputGroup-sizing-default" name="last-oil-change">
+            aria-describedby="inputGroup-sizing-default" name="lastOilChange">
         </div>
         <h6><span id="wrongInfo"></span></h6>
         <a href="/garage">
           <button class="mb-3" id="submit" name="submit">Submit</button>
         </a>
+        </form>
       </div>
     </div>
   </div>
