@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "Ft041104",
+    "password": "password",
     "database": "cartenderdb",
     "host": "localhost",
     "dialect": "mysql"
