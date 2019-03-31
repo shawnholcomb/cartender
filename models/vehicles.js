@@ -26,20 +26,14 @@ module.exports = function(sequelize, DataTypes) {
     allowNull: false
   },
   last_oil_change_date: {
-    type: DataTypes.DATEONLY,
-    get: function() {
-      return moment.utc(this.getDataValue('CreateDate')).format('DD-MM-YYYY')
-    }
+    type: DataTypes.DATEONLY
   },
   last_oil_change_miles: {
     type: DataTypes.INTEGER,
     allowNull: true
   },
   tires_date: {
-    type: DataTypes.DATEONLY,
-    get: function() {
-      return moment.utc(this.getDataValue('CreateDate')).format('DD-MM-YYYY')
-  }
+    type: DataTypes.DATEONLY
   },
   tires_miles: {
     type: DataTypes.INTEGER,

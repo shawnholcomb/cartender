@@ -47,7 +47,6 @@
       </div>
       <div class="tab-content" id="nav-tabContent">
         <div class="tab-pane fade show active" id="list-garage" role="tabpanel" aria-labelledby="list-garage-list">
-
           {{#each dbvehicle}}
 
           <div class="vehicle">
@@ -82,7 +81,7 @@
                     <table class="inner-table">
                       <tr>
                         <td>Date:</td>
-                        <td>{{this.last_oil_change}}</td>
+                        <td>{{this.last_oil_change_date}}</td>
                       </tr>
                       <tr>
                         <td> Mileage:</td>
@@ -108,7 +107,7 @@
                       </tr>
                       <tr>
                         <td> Mileage:</td>
-                        <td class="pb-0">{{this-tires_miles}}</td>
+                        <td class="pb-0">{{this.tires_miles}}</td>
                         
                       </tr>
                     </table>
@@ -120,9 +119,10 @@
           {{/each}}
 
           
-
         </div>
+
         <div class="tab-pane fade" id="list-fuel" role="tabpanel" aria-labelledby="list-fuel-list">
+          {{> mapAPI}}
           <p>Fuel here</p>
         </div>
         <div class="tab-pane fade mx-auto" id="list-shops" role="tabpanel" aria-labelledby="list-shops-list">

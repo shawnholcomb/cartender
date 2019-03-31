@@ -28,13 +28,3 @@ module.exports = function (app) {
     });
   });
 };
-
-
-//These are the handlebars vars to insert into garage page
-// {{make}}
-// {{model}}  
-// {{year}}
-// {{registration}}
-// {{vin}}
-// {{plate}}
-// {{lastOilChange}}
