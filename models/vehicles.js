@@ -1,3 +1,4 @@
+var moment = require("moment");
 module.exports = function(sequelize, DataTypes) {
   var vehicle = sequelize.define("vehicle", {
     make: {
@@ -14,7 +15,7 @@ module.exports = function(sequelize, DataTypes) {
   },
   vin: {
     type: DataTypes.STRING,
-    allowNull: false
+    allowNull: true
   },
   plate: {
     type: DataTypes.STRING,
@@ -24,17 +25,21 @@ module.exports = function(sequelize, DataTypes) {
     type: DataTypes.STRING,
     allowNull: false
   },
-  last_oil_change: {
-    type: DataTypes.INTEGER,
-    allowNull: true
+  last_oil_change_date: {
+    type: DataTypes.DATEONLY,
+    get: function() {
+      return moment.utc(this.getDataValue('CreateDate')).format('DD-MM-YYYY')
+    }
   },
   last_oil_change_miles: {
     type: DataTypes.INTEGER,
     allowNull: true
   },
   tires_date: {
-    type: DataTypes.INTEGER,
-    allowNull: true
+    type: DataTypes.DATEONLY,
+    get: function() {
+      return moment.utc(this.getDataValue('CreateDate')).format('DD-MM-YYYY')
+  }
   },
   tires_miles: {
     type: DataTypes.INTEGER,

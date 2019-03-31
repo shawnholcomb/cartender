@@ -48,7 +48,7 @@
       <div class="tab-content" id="nav-tabContent">
         <div class="tab-pane fade show active" id="list-garage" role="tabpanel" aria-labelledby="list-garage-list">
 
-          {{#each vehicles}}
+          {{#each dbvehicle}}
 
           <div class="vehicle">
             <div class="row no-gutters vehicle-name pt-2">
@@ -119,72 +119,11 @@
 
           {{/each}}
 
-          <div class="vehicle">
-            <div class="row no-gutters vehicle-name pt-2">
-              <div class="mx-3 open-close" id="open-plus">
-                <h1>+</h1>
-              </div>
-              <div class="mx-3 open-close" id="close-minus">
-                <h1>-</h1>
-              </div>
-              <div class="my-auto">
-                <h3>2015 Kia Soul</h3>
-              </div>
-            </div>
-            <div class="row no-gutters ind-vehicle">
-              <table class="vehicle-details">
-                <tr>
-                  <td>VIN:</td>
-                  <td>1234TEST8675309AB</td>
-                </tr>
-                <tr>
-                  <td>License Plate:</td>
-                  <td>ABC1234</td>
-                </tr>
-                <tr>
-                  <td>Registration Exp:</td>
-                  <td>10/19</td>
-                </tr>
-                <tr>
-                  <td>Last Oil Change:</td>
-                  <td>
-                    <table class="inner-table">
-                      <tr>
-                        <td>Date:</td>
-                        <td>02/24/2019</td>
-                      </tr>
-                      <tr>
-                        <td> Mileage:</td>
-                        <td>67050</td>
-                      </tr>
-                      <tr>
-                        <td class="pb-0"><button class="reminder" id="oil-change-reminder"><i
-                              class="fas fa-bell"></i>Set Reminder</button></td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Tires</td>
-                  <td>
-                    <table class="inner-table">
-                      <tr>
-                        <td>Date:</td>
-                        <td>09/27/2018</td>
-                      </tr>
-                      <tr>
-                        <td> Mileage:</td>
-                        <td class="pb-0">59863</td>
-                      </tr>
-                    </table>
-                  </td>
-              </table>
-            </div>
-          </div>
+          
 
         </div>
         <div class="tab-pane fade" id="list-fuel" role="tabpanel" aria-labelledby="list-fuel-list">
-          <p>This is the fuel section</p>
+          <p>Fuel here</p>
         </div>
         <div class="tab-pane fade mx-auto" id="list-shops" role="tabpanel" aria-labelledby="list-shops-list">
           <h1 class="coming-soon">COMING SOON</h1>
@@ -206,6 +145,7 @@
         <button type="button" class="close text-right" data-dismiss="modal" aria-label="Close">
           <span caria-hidden="true">&times;</span>
         </button>
+        <form action="/api/garage" method="POST">
         <h2 class="font-weight-bold mb-3">Add Vehicle</h2>
         <h5 class="mb-3">Simply submit your vehicle info to get started</h5>
 
@@ -224,41 +164,46 @@
             aria-describedby="inputGroup-sizing-default" name="model">
         </div>
 
+         <div class="input-group mb-3">
+          <input type="text" id="vin" class="form-control" aria-label="vin"
+            placeholder="Vin Number" aria-describedby="inputGroup-sizing-default" name="vin">
+
         <div class="input-group mb-3">
           <input type="text" id="registration" class="form-control" aria-label="registration"
             placeholder="Registration Date" aria-describedby="inputGroup-sizing-default" name="registration">
         </div>
 
         <div class="input-group mb-3">
-          <input type="plate" id="plate" class="form-control" aria-label="make" placeholder="Plate Number"
+          <input type="text" id="plate" class="form-control" aria-label="plate" placeholder="Plate Number"
             aria-describedby="inputGroup-sizing-default" name="plate">
         </div>
 
         <div class="input-group mb-3">
-          <input type="text" id="last-oil-change" class="form-control" aria-label="last-oil-change"
-            placeholder="Last Oil Change (Date)" aria-describedby="inputGroup-sizing-default" name="last-oil-change">
+          <input type="text" id="last-oil-change-date" class="form-control" aria-label="last-oil-change"
+            placeholder="Last Oil Change (Date)" aria-describedby="inputGroup-sizing-default" name="last_oil_change_date" onfocus="(this.type='date')" onblur="(this.type='text')">
         </div>
 
         <div class="input-group mb-3">
-          <input type="text" id="last-oil-change-mile" class="form-control" aria-label="last-oil-change-mile"
+          <input type="text" id="last-oil-change-miles" class="form-control" aria-label="last-oil-change-mile"
             placeholder="Last Oil Change (Mileage)" aria-describedby="inputGroup-sizing-default"
-            name="last-oil-change-mile">
+            name="last_oil_change_miles">
         </div>
 
         <div class="input-group mb-3">
           <input type="text" id="tires-date" class="form-control" aria-label="tires-date" placeholder="New Tires (Date)"
-            aria-describedby="inputGroup-sizing-default" name="ltires-date">
+            aria-describedby="inputGroup-sizing-default" name="tires_date" onfocus="(this.type='date')" onblur="(this.type='text')">
         </div>
 
         <div class="input-group mb-3">
           <input type="text" id="tires-miles" class="form-control" aria-label="tires-miles"
-            placeholder="New Tires (Mileage)" aria-describedby="inputGroup-sizing-default" name="ltires-miles">
+            placeholder="New Tires (Mileage)" aria-describedby="inputGroup-sizing-default" name="tires_miles">
         </div>
 
         <h6><span id="wrongInfo"></span></h6>
         <a href="/garage">
           <button class="mb-3" id="submit" name="submit">Submit</button>
         </a>
+        </form>
       </div>
     </div>
   </div>

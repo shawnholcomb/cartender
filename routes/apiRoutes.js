@@ -11,10 +11,10 @@ module.exports = function (app) {
 
   // Create a new example
   app.post("/api/garage", function (req, res) {
-    var { make, model, year, registration, vin, plate, lastOilChange } = req.body;
+    var { make, model, year, registration, vin, plate, last_oil_change_date, last_oil_change_miles, tires_date, tires_miles } = req.body;
     // var errors = [];
     // ToDo error handling for form input
-    db.vehicle.create({make, model, year, registration, vin, plate, lastOilChange})
+    db.vehicle.create({make, model, year, registration, vin, plate, last_oil_change_date, last_oil_change_miles, tires_date, tires_miles})
     .then(function (dbvehicle) {
       res.redirect("/garage")
     })
