@@ -8,6 +8,10 @@ a {
   cursor: pointer;
 }
 
+button:focus {
+  outline: none;
+}
+
  /* navbar items */
 
 .navbar {
@@ -141,7 +145,8 @@ footer a:hover {
 
 #create-account,
 #signin-button,
-#submit {
+#submit,
+#profile-submit {
   width: 100%;
   background: #ff0051;
   color: #fff;
@@ -152,13 +157,15 @@ footer a:hover {
 
 #create-account:hover,
 #signin-button:hover,
-#submit:hover {
+#submit:hover,
+#profile-submit:hover  {
   box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.4);
 }
 
 #create-account:active,
 #signin-button:active,
-#submit:active {
+#submit:active,
+#profile-submit:active {
   background: #e80046;
 }
 
@@ -347,14 +354,12 @@ text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
   color: #fff;
   font-size: 18px;
   padding: 10px 25px;
+  max-width: 150px;
 }
 
 #edit:active {
   border: 2px solid #e80046;
-}
-
-#edit:focus {
-  outline: none;
+  color: #e80046;
 }
 
 .vehicle-name {
@@ -366,13 +371,14 @@ text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
   color: #fff;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
   box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
 }
 
 .open-close {
   width: 23px;
 }
 
-#close-minus {
+.minus {
   display: none;
 }
 
@@ -402,7 +408,7 @@ text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 }
 
 .inner-table td {
-  min-width: 150px;
+  min-width: 185px;
   padding: 0 0 10px 0;
 }
 
@@ -414,10 +420,6 @@ text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 
 .reminder:active {
   background: #e80046;
-}
-
-.reminder:focus {
-  outline: none;
 }
 
 .fa-bell {
@@ -450,6 +452,43 @@ text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 .coming-soon {
   letter-spacing: 7px;
 }
+
+/* Gas page */
+
+.fuel-switch {
+  margin-top: 100px;
+}
+
+.fuel-gas,
+.fuel-electric {
+  font-size: 22px;
+  background: #f5f5f5;
+  border: none;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+  float: left;
+}
+
+.fuel-gas.active, 
+.fuel-electric.active {
+  background: rgba(0, 0, 0, 0.25);
+  color: #fff;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.fuel-gas {
+  border-radius: 25px 0 0 25px;
+  padding: 5px 13px 5px 25px;
+  margin-right: 0;
+}
+
+.fuel-electric {
+  border-radius: 0 25px 25px 0;
+  padding: 5px 25px 5px 13px;
+  margin-left: 0;
+}
+
+
+
 
 @media screen and (max-width: 575px) {
   .row {

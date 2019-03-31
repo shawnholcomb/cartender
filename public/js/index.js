@@ -1,4 +1,4 @@
-  // Functions to toggle Signup/Sign In modal
+// Functions to toggle Signup/Sign In modal
 
 $("#account").on("click", function () {
   $("#signup-toggle").toggle();
@@ -12,17 +12,31 @@ $("#signup").on("click", function () {
 
 // Function to toggle add car modal
 
-$("#addCar").on("click", function() {
+$("#addCar").on("click", function () {
   $("#addVehicle-toggle").toggle();
 })
 
 // Functions to toggle car details open/closed
 
-$(".vehicle-name").on("click", function() {
-  $("#open-plus").toggle();
-  $("#close-minus").toggle();
-  $(".vehicle-details").toggle();
+$(".vehicle-name").on("click", function () {
+
+  var dataId = $(this).attr("id");
+  $(".plus-" + dataId).toggle();
+  $(".minus-" + dataId).toggle();
+  $("." + dataId).toggle();
 })
+
+// Fuel type toggle function
+
+$(".fuel-gas").on("click", function() {
+  $(".fuel-gas").addClass("active");
+  $(".fuel-electric").removeClass("active");
+});
+
+$(".fuel-electric").on("click", function() {
+  $(".fuel-electric").addClass("active");
+  $(".fuel-gas").removeClass("active");
+});
 
   // $("#submit").on("click", ((e) => {
   //   e.preventDefault();
@@ -36,7 +50,7 @@ $(".vehicle-name").on("click", function() {
   //     vin: $("#vin").val()
   //   };
   //   console.log(addVehicleForm);
-   
+
   //   $.ajax({
   //     type: "POST",
   //     url: "/api/garage",
