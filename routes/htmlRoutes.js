@@ -7,7 +7,10 @@ module.exports = function (app) {
   });
 
   app.get("/garage", function(req, res) {
-    res.render("garage", {title: "Cartender - My Garage"});
+    db.vehicle.findAll({}).then((dbvehicle) => {
+
+      res.render("garage", {title: "Cartender - My Garage", dbvehicle});
+    })
   })
   // Load example page and pass in an example by id
   app.get("/example/:id", function (req, res) {
