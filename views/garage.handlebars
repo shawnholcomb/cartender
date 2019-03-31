@@ -33,10 +33,15 @@
           <div class="col-2 profile-image">
             <img src="/images/profile-image.jpg" id="prof-pic">
           </div>
-          <div class="col-10 profile-text">
-            <h2>John's Garage</h2>
-            <h2>2 Vehicles</h2>
-            <h3>0 notifications</h3>
+          <div class="col-5 profile-text">
+            <h2 class="mb-3">John's Garage</h2>
+            <h4 class="mb-3">2 Vehicles</h3>
+            <h5>Insurance: State Farm</h5>
+            <h5>Insurance Expires: 7/2019</h5>
+          </div>
+          <div class="col-5 profile-text">
+            <h3 class="mb-3">0 notifications<i class="fas fa-bell ml-3"></i></h3>
+            <button class="mt-3" id="edit">Edit Profile</button>
           </div>
         </div>
       </div>
@@ -81,10 +86,13 @@
                       </tr>
                       <tr>
                         <td> Mileage:</td>
-                        <td>{{need to create this}}</td>
+                        
+                        <td>{{this.last_oil_change_miles}}</td>
+                        
                       </tr>
                       <tr>
-                        <td><button class="reminder" id="oil-change-reminder">Set Reminder</button></td>
+                        <td class="pb-0"><button class="reminder" id="oil-change-reminder"><i
+                              class="fas fa-bell"></i>Set Reminder</button></td>
                       </tr>
                     </table>
                   </td>
@@ -95,11 +103,13 @@
                     <table class="inner-table">
                       <tr>
                         <td>Date:</td>
-                        <td>{{need to create this}}</td>
+
+                        <td>{{this.tires_date}}</td>
                       </tr>
                       <tr>
                         <td> Mileage:</td>
-                        <td>{{need to create this}} </td>
+                        <td class="pb-0">{{this-tires_miles}}</td>
+                        
                       </tr>
                     </table>
                   </td>
@@ -109,15 +119,78 @@
 
           {{/each}}
 
+          <div class="vehicle">
+            <div class="row no-gutters vehicle-name pt-2">
+              <div class="mx-3 open-close" id="open-plus">
+                <h1>+</h1>
+              </div>
+              <div class="mx-3 open-close" id="close-minus">
+                <h1>-</h1>
+              </div>
+              <div class="my-auto">
+                <h3>2015 Kia Soul</h3>
+              </div>
+            </div>
+            <div class="row no-gutters ind-vehicle">
+              <table class="vehicle-details">
+                <tr>
+                  <td>VIN:</td>
+                  <td>1234TEST8675309AB</td>
+                </tr>
+                <tr>
+                  <td>License Plate:</td>
+                  <td>ABC1234</td>
+                </tr>
+                <tr>
+                  <td>Registration Exp:</td>
+                  <td>10/19</td>
+                </tr>
+                <tr>
+                  <td>Last Oil Change:</td>
+                  <td>
+                    <table class="inner-table">
+                      <tr>
+                        <td>Date:</td>
+                        <td>02/24/2019</td>
+                      </tr>
+                      <tr>
+                        <td> Mileage:</td>
+                        <td>67050</td>
+                      </tr>
+                      <tr>
+                        <td class="pb-0"><button class="reminder" id="oil-change-reminder"><i
+                              class="fas fa-bell"></i>Set Reminder</button></td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Tires</td>
+                  <td>
+                    <table class="inner-table">
+                      <tr>
+                        <td>Date:</td>
+                        <td>09/27/2018</td>
+                      </tr>
+                      <tr>
+                        <td> Mileage:</td>
+                        <td class="pb-0">59863</td>
+                      </tr>
+                    </table>
+                  </td>
+              </table>
+            </div>
+          </div>
+
         </div>
         <div class="tab-pane fade" id="list-fuel" role="tabpanel" aria-labelledby="list-fuel-list">
           <p>This is the fuel section</p>
         </div>
-        <div class="tab-pane fade" id="list-shops" role="tabpanel" aria-labelledby="list-shops-list">
-          <h1 class="m-4">THIS PAGE IS UNDER CONSTRUCTION</p>
+        <div class="tab-pane fade mx-auto" id="list-shops" role="tabpanel" aria-labelledby="list-shops-list">
+          <h1 class="coming-soon">COMING SOON</h1>
         </div>
-        <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
-          <h1 class="m-4">THIS PAGE IS UNDER CONSTRUCTION</p>
+        <div class="tab-pane fade mx-auto" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
+          <h1 class="coming-soon">COMING SOON</h1>
         </div>
       </div>
     </div>
@@ -133,38 +206,55 @@
         <button type="button" class="close text-right" data-dismiss="modal" aria-label="Close">
           <span caria-hidden="true">&times;</span>
         </button>
-        <h2 class="font-weight-bold mb-4">Add Vehicle</h2>
-        <h5 class="mb-4">Simply submit your vehicle info to get started</h5>
+        <h2 class="font-weight-bold mb-3">Add Vehicle</h2>
+        <h5 class="mb-3">Simply submit your vehicle info to get started</h5>
 
-        <div class="input-group mb-4">
-          <input type="text" id="make" class="form-control" aria-label="make" placeholder="Make"
-            aria-describedby="inputGroup-sizing-default" name="make">
-        </div>
-
-        <div class="ingit ut-group mb-4">
-          <input type="text" id="model" class="form-control" aria-label="model" placeholder="Model"
-            aria-describedby="inputGroup-sizing-default" name="model">
-        </div>
-
-        <div class="input-group mb-4">
+        <div class="input-group mb-3">
           <input type="text" id="year" class="form-control" aria-label="year" placeholder="Year"
             aria-describedby="inputGroup-sizing-default" name="year">
         </div>
 
-        <div class="input-group mb-4">
-          <input type="text" id="registration" class="form-control" aria-label="registration"
-            placeholder="Registration Number" aria-describedby="inputGroup-sizing-default" name="registration">
+        <div class="input-group mb-3">
+          <input type="text" id="make" class="form-control" aria-label="make" placeholder="Make"
+            aria-describedby="inputGroup-sizing-default" name="make">
         </div>
 
-        <div class="input-group mb-4">
+        <div class="ingit ut-group mb-3">
+          <input type="text" id="model" class="form-control" aria-label="model" placeholder="Model"
+            aria-describedby="inputGroup-sizing-default" name="model">
+        </div>
+
+        <div class="input-group mb-3">
+          <input type="text" id="registration" class="form-control" aria-label="registration"
+            placeholder="Registration Date" aria-describedby="inputGroup-sizing-default" name="registration">
+        </div>
+
+        <div class="input-group mb-3">
           <input type="plate" id="plate" class="form-control" aria-label="make" placeholder="Plate Number"
             aria-describedby="inputGroup-sizing-default" name="plate">
         </div>
 
-        <div class="input-group mb-4">
+        <div class="input-group mb-3">
           <input type="text" id="last-oil-change" class="form-control" aria-label="last-oil-change"
-            placeholder="Last Oil Change" aria-describedby="inputGroup-sizing-default" name="last-oil-change">
+            placeholder="Last Oil Change (Date)" aria-describedby="inputGroup-sizing-default" name="last-oil-change">
         </div>
+
+        <div class="input-group mb-3">
+          <input type="text" id="last-oil-change-mile" class="form-control" aria-label="last-oil-change-mile"
+            placeholder="Last Oil Change (Mileage)" aria-describedby="inputGroup-sizing-default"
+            name="last-oil-change-mile">
+        </div>
+
+        <div class="input-group mb-3">
+          <input type="text" id="tires-date" class="form-control" aria-label="tires-date" placeholder="New Tires (Date)"
+            aria-describedby="inputGroup-sizing-default" name="ltires-date">
+        </div>
+
+        <div class="input-group mb-3">
+          <input type="text" id="tires-miles" class="form-control" aria-label="tires-miles"
+            placeholder="New Tires (Mileage)" aria-describedby="inputGroup-sizing-default" name="ltires-miles">
+        </div>
+
         <h6><span id="wrongInfo"></span></h6>
         <a href="/garage">
           <button class="mb-3" id="submit" name="submit">Submit</button>

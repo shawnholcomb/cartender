@@ -41,7 +41,7 @@ nav li a {
 }
 
 #get-started:active {
-  background: #e4004c;
+  background: #e80046;
 }
 
 #get-started a {
@@ -62,7 +62,6 @@ nav li a {
 }
 
 #phone {
-  /* height: 55vh; */
   background: url("/images/phone-app.gif") center no-repeat;
   background-size: contain;
 }
@@ -160,7 +159,7 @@ footer a:hover {
 #create-account:active,
 #signin-button:active,
 #submit:active {
-  background: #e4004c;
+  background: #e80046;
 }
 
 #account {
@@ -202,7 +201,7 @@ footer a:hover {
 }
 
 #logo-404 a:active {
-  color: #e4004c;
+  color: #e80046;
 }
 
 #fail-page {
@@ -238,7 +237,7 @@ footer a:hover {
 }
 
 #home:active {
-  color: #e4004c;
+  color: #e80046;
 }
 
 @media screen and (max-width: 1199px) {
@@ -280,7 +279,7 @@ footer a:hover {
 
 .garage-body {
   background: #fff;
-  min-height: calc(100vh - 340px);
+  min-height: calc(100vh - 350px);
 }
 
 .garage-body-row {
@@ -297,7 +296,7 @@ footer a:hover {
 }
 
 #add-new:active {
-  background: #e4004c;
+  background: #e80046;
 }
 
 #add-new a {
@@ -306,6 +305,10 @@ footer a:hover {
 
 .list-group-item{
   border: none;
+}
+
+.list-group-item:hover {
+  border-radius: 30px 0 0 30px;
 }
 
 .list-group-item.active {
@@ -338,12 +341,28 @@ text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
   padding: 25px;
 }
 
-.profile-text h2 {
-  margin-bottom: 15px;
+#edit {
+  background: none;
+  border: 2px solid #fff;
+  color: #fff;
+  font-size: 18px;
+  padding: 10px 25px;
+}
+
+#edit:active {
+  border: 2px solid #e80046;
+}
+
+#edit:focus {
+  outline: none;
 }
 
 .vehicle-name {
-  background: #ff0051;
+  background: #e80046; /* Old browsers */
+  background: -moz-linear-gradient(top, #e80046 0%, #ff3172 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #e80046 0%,#ff3172 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #e80046 0%,#ff3172 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e80046', endColorstr='#ff3172',GradientType=0 ); /* IE6-9 */
   color: #fff;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
   box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.25);
@@ -366,6 +385,7 @@ text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
   padding: 10px 0 0 25px;
   display: none;
   width: 100%;
+  box-shadow: 8px 1px 15px rgba(0, 0, 0, 0.08);
 }
 
 .vehicle-details tr {
@@ -389,28 +409,47 @@ text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 .reminder {
   background: #ff0051;
   color: #fff;
-  padding: 5px 20px;
-  margin-top: 5px;
-  border-radius: 30px;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+  padding: 8px 20px;
 }
 
 .reminder:active {
-  background: #e4004c;
+  background: #e80046;
 }
 
+.reminder:focus {
+  outline: none;
+}
 
+.fa-bell {
+  margin-right: 5px;
+}
 
+#list-shops,
+#list-settings {
+  background-size: 100%;
+  min-height: 46vh;
+  color: #fff;
+  text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.4);
+  padding-top: 10%;
+}
 
+#list-shops {
+  background: url("/images/comingsoon-bg.jpg") center center no-repeat;
+}
 
+#list-settings {
+  background: url("/images/setting-coming-soon.jpg") left 
+}
 
+#list-shops h1,
+#list-settings h1 {
+  font-size: 3rem;
+  text-align: center;
+}
 
-
-
-
-
-
-
+.coming-soon {
+  letter-spacing: 7px;
+}
 
 @media screen and (max-width: 575px) {
   .row {
