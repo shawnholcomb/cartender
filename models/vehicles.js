@@ -28,10 +28,19 @@ module.exports = function(sequelize, DataTypes) {
     type: DataTypes.INTEGER,
     allowNull: true
   },
-  next_oil_change: {
+  last_oil_change_miles: {
+    type: DataTypes.INTEGER,
+    allowNull: true
+  },
+  tires_date: {
+    type: DataTypes.INTEGER,
+    allowNull: true
+  },
+  tires_miles: {
     type: DataTypes.INTEGER,
     allowNull: true
   }
+
   });
   return vehicle;
 };
