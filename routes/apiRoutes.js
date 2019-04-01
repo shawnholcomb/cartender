@@ -90,9 +90,16 @@ module.exports = function (app) {
   //   });
   // });
 
-  app.delete("/delete", function (re) {
-    console.log("this is working");
-  })
+  app.delete("/api/delete/:id", function (req, res) {
+    db.vehicle.destroy({
+      where: {
+        id: req.params.id
+      }
+    })
+      .then(function (dbPost) {
+        // res.render("/garage");
+      });
+  });
 
   // Function for Passport
   // function isLoggedIn(req, res, next) {
