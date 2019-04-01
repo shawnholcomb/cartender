@@ -28,19 +28,34 @@ $(".vehicle-name").on("click", function () {
 
 // Fuel type toggle function
 
-$(".fuel-gas").on("click", function() {
+$(".fuel-gas").on("click", function () {
   $(".fuel-gas").addClass("active");
   $(".fuel-electric").removeClass("active");
 });
 
-$(".fuel-electric").on("click", function() {
+$(".fuel-electric").on("click", function () {
   $(".fuel-electric").addClass("active");
   $(".fuel-gas").removeClass("active");
 });
 
-$("#confirm-delete").on("click", function() {
+$("#confirm-delete").on("click", function () {
   console.log(this);
 })
+
+// Delete functionality
+
+$(".delete-link").on("click", deleteVehicle);
+
+function deleteVehicle() {
+  var id = $(this).attr("data-id");
+  $.ajax({
+    method: "DELETE",
+    url: "/api/delete/" + id
+  })
+    .then(function (dbDelete) {
+      location.load();
+    })
+}
 
   // $("#submit").on("click", ((e) => {
   //   e.preventDefault();
