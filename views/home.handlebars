@@ -96,45 +96,54 @@
         </button>
         <h2 class="font-weight-bold mb-4">To create an account, start here.</h2>
         <h5 class="mb-4">Sign up to make maintenance tracking easy.</h5>
+        <form method="post" action="api/register">
+          <div class="input-group md-form mb-4">
+            <input type="text" class="form-control" aria-label="Email" id="register-email" placeholder="Email"
+              name="registeremail" aria-describedby="inputGroup-sizing-default">
+          </div>
+          <div class="input-group mb-4">
+            <input type="password" class="form-control" aria-label="password" id="register-password"
+              placeholder="Create Password" name="registerpassword" aria-describedby="inputGroup-sizing-default">
+          </div>
+          <div class="input-group mb-4">
+            <input type="text" class="form-control" aria-label="first-name" id="register-firstname"
+              placeholder="First Name" name="registerfirstname" aria-describedby="inputGroup-sizing-default">
+          </div>
+          <div class="input-group mb-4">
+            <input type="text" class="form-control" aria-label="last-name" id="register-lastname"
+              placeholder="Last Name" name="registerlastname" aria-describedby="inputGroup-sizing-default">
+          </div>
+          <a href="/garage">
+            <button class="mb-3" id="create-account">Create Account</button>
+          </a>
+          <a id="account">
+            <h6 class="text-center">I already have an account</h6 class="text-center">
+          </a>
+        </form>
       </div>
 
-      <div class="input-group md-form mb-4">
-        <input type="text" class="form-control" aria-label="Email" placeholder="Email"
-          aria-describedby="inputGroup-sizing-default">
-      </div>
+      <div id="signin-toggle">
+        <button type="button" class="close text-right" data-dismiss="modal" aria-label="Close">
+          <span caria-hidden="true">&times;</span>
+        </button>
+        <h2 class="font-weight-bold mb-4">Welcome back.</h2>
+        <form method="post" action="/login">
+          <div class="input-group mb-4">
+            <input type="text" class="form-control" aria-label="Email" placeholder="Email" name="username"
+              aria-describedby="inputGroup-sizing-default">
+          </div>
 
-      <div class="input-group mb-4">
-        <input type="text" class="form-control" aria-label="password" placeholder="Create Password"
-          aria-describedby="inputGroup-sizing-default">
+          <div class="input-group mb-4">
+            <input type="password" class="form-control" aria-label="password" placeholder="Password" name="password"
+              aria-describedby="inputGroup-sizing-default">
+          </div>
+          <a href="/garage">
+            <button class="mb-3" id="signin-button">Sign In</button>
+          </a>
+          <h6 class="text-center">Need to sign up? <a id="signup">Click here</a></h6 class="text-center">
+          </a>
+        </form>
       </div>
-      <a href="/garage">
-        <button class="mb-3" id="create-account">Create Account</button>
-      </a>
-      <a id="account">
-        <h6 class="text-center">I already have an account</h6 class="text-center">
-      </a>
-    </div>
-
-    <div id="signin-toggle">
-      <button type="button" class="close text-right" data-dismiss="modal" aria-label="Close">
-        <span caria-hidden="true">&times;</span>
-      </button>
-      <h2 class="font-weight-bold mb-4">Welcome back.</h2>
-      <div class="input-group mb-4">
-        <input type="text" class="form-control" aria-label="Email" placeholder="Email"
-          aria-describedby="inputGroup-sizing-default">
-      </div>
-
-      <div class="input-group mb-4">
-        <input type="text" class="form-control" aria-label="password" placeholder="Password"
-          aria-describedby="inputGroup-sizing-default">
-      </div>
-      <a href="/garage">
-        <button class="mb-3" id="signin-button">Sign In</button>
-      </a>
-      <h6 class="text-center">Need to sign up? <a id="signup">Click here</a></h6 class="text-center">
-      </a>
     </div>
   </div>
-</div>
 </div>

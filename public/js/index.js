@@ -38,6 +38,10 @@ $(".fuel-electric").on("click", function() {
   $(".fuel-gas").removeClass("active");
 });
 
+$("#confirm-delete").on("click", function() {
+  console.log(this);
+})
+
   // $("#submit").on("click", ((e) => {
   //   e.preventDefault();
   //   var addVehicleForm = {
