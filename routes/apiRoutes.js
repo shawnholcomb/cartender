@@ -39,7 +39,7 @@ var bcrypt = require("bcrypt");
 
 module.exports = function (app) {
   // Get all examples
-  app.get("/api/garage", isLoggedIn, function (req, res) {
+  app.get("/api/garage", function (req, res) {
     db.vehicle.findAll({})
       .then((dbvehicle) => {
         res.json(dbvehicle);
