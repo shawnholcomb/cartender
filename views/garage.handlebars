@@ -31,17 +31,17 @@
       <div class="profile mx-0">
         <div class="row no-gutters">
           <div class="col-2 profile-image">
-            <img src="/images/profile-image.jpg" id="prof-pic">
+            <img src="/images/profile-default.jpg" id="prof-pic">
           </div>
-          <div class="col-5 profile-text">
+          <div class="col-4 profile-text">
             <h2 class="mb-3">John's Garage</h2>
             <h4 class="mb-3">2 Vehicles</h3>
-            <h5>Insurance: State Farm</h5>
-            <h5>Insurance Expires: 7/2019</h5>
+              <h5>Insurance: State Farm</h5>
+              <h5>Insurance Expires: 7/2019</h5>
           </div>
-          <div class="col-5 profile-text">
+          <div class="col-6 profile-text d-flex flex-column justify-content-between">
             <h3 class="mb-3">0 notifications<i class="fas fa-bell ml-3"></i></h3>
-            <button class="mt-3" id="edit">Edit Profile</button>
+            <button class="nav-link" data-toggle="modal" data-target=".profile-modal" id="edit">Edit Profile</button>
           </div>
         </div>
       </div>
@@ -51,11 +51,11 @@
           {{#each dbvehicle}}
 
           <div class="vehicle">
-            <div class="row no-gutters vehicle-name pt-2">
-              <div class="mx-3 open-close" id="open-plus">
+            <div class="row no-gutters vehicle-name pt-2" id="vehicle-{{this.id}}">
+              <div class="mx-3 open-close plus plus-vehicle-{{this.id}}">
                 <h1>+</h1>
               </div>
-              <div class="mx-3 open-close" id="close-minus">
+              <div class="mx-3 open-close minus minus-vehicle-{{this.id}}">
                 <h1>-</h1>
               </div>
               <div class="my-auto">
@@ -63,7 +63,7 @@
               </div>
             </div>
             <div class="row no-gutters ind-vehicle">
-              <table class="vehicle-details">
+              <table class="vehicle-details vehicle-{{this.id}}">
                 <tr>
                   <td>VIN:</td>
                   <td>{{this.vin}}</td>
@@ -86,9 +86,9 @@
                       </tr>
                       <tr>
                         <td> Mileage:</td>
-                        
+
                         <td>{{this.last_oil_change_miles}}</td>
-                        
+
                       </tr>
                       <tr>
                         <td class="pb-0"><button class="reminder" id="oil-change-reminder"><i
@@ -109,31 +109,47 @@
                       <tr>
                         <td> Mileage:</td>
                         <td class="pb-0">{{this.tires_miles}}</td>
-                        
                       </tr>
                     </table>
                   </td>
+                </tr>
+                <tr>
+                  <td>
+                    <h6 class="delete-link" data-id="{{{this.id}}}" method="delete" action="/delete">DELETE THIS VEHICLE
+                    </h6>
+                  </td>
+                </tr>
               </table>
             </div>
           </div>
+        </div>
 
-          {{/each}}
+        {{/each}}
 
-          
 
+        <div class="fuel-switch">
+          <button class="fuel-gas active">
+            <i class="fas fa-gas-pump"></i>
+          </button>
+          <button class="fuel-electric">
+            <i class="fas fa-bolt"></i>
+          </button>
         </div>
-        <div class="tab-pane fade" id="list-fuel" role="tabpanel" aria-labelledby="list-fuel-list">
-          <p>Fuel here</p>
-        </div>
-        <div class="tab-pane fade mx-auto" id="list-shops" role="tabpanel" aria-labelledby="list-shops-list">
-          <h1 class="coming-soon">COMING SOON</h1>
-        </div>
-        <div class="tab-pane fade mx-auto" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
-          <h1 class="coming-soon">COMING SOON</h1>
-        </div>
+
+
+      </div>
+      <div class="tab-pane fade" id="list-fuel" role="tabpanel" aria-labelledby="list-fuel-list">
+        <p>Fuel here</p>
+      </div>
+      <div class="tab-pane fade mx-auto" id="list-shops" role="tabpanel" aria-labelledby="list-shops-list">
+        <h1 class="coming-soon">COMING SOON</h1>
+      </div>
+      <div class="tab-pane fade mx-auto" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
+        <h1 class="coming-soon">COMING SOON</h1>
       </div>
     </div>
   </div>
+</div>
 
 </div>
 
@@ -148,63 +164,112 @@
           <span caria-hidden="true">&times;</span>
         </button>
         <form action="/api/garage" method="POST">
-        <h2 class="font-weight-bold mb-3">Add Vehicle</h2>
-        <h5 class="mb-3">Simply submit your vehicle info to get started</h5>
+          <h2 class="font-weight-bold mb-3">Add Vehicle</h2>
+          <h5 class="mb-3">Simply submit your vehicle info to get started</h5>
 
-        <div class="input-group mb-3">
-          <input type="text" id="year" class="form-control" aria-label="year" placeholder="Year"
-            aria-describedby="inputGroup-sizing-default" name="year">
-        </div>
+          <div class="input-group mb-3">
+            <input type="text" id="year" class="form-control" aria-label="year" placeholder="Year"
+              aria-describedby="inputGroup-sizing-default" name="year">
+          </div>
 
-        <div class="input-group mb-3">
-          <input type="text" id="make" class="form-control" aria-label="make" placeholder="Make"
-            aria-describedby="inputGroup-sizing-default" name="make">
-        </div>
+          <div class="input-group mb-3">
+            <input type="text" id="make" class="form-control" aria-label="make" placeholder="Make"
+              aria-describedby="inputGroup-sizing-default" name="make">
+          </div>
 
-        <div class="ingit ut-group mb-3">
-          <input type="text" id="model" class="form-control" aria-label="model" placeholder="Model"
-            aria-describedby="inputGroup-sizing-default" name="model">
-        </div>
+          <div class="ingit ut-group mb-3">
+            <input type="text" id="model" class="form-control" aria-label="model" placeholder="Model"
+              aria-describedby="inputGroup-sizing-default" name="model">
+          </div>
 
-         <div class="input-group mb-3">
-          <input type="text" id="vin" class="form-control" aria-label="vin"
-            placeholder="Vin Number" aria-describedby="inputGroup-sizing-default" name="vin">
+          <div class="input-group mb-3">
+            <input type="text" id="vin" class="form-control" aria-label="vin" placeholder="Vin Number"
+              aria-describedby="inputGroup-sizing-default" name="vin">
+          </div>
 
-        <div class="input-group mb-3">
-          <input type="text" id="registration" class="form-control" aria-label="registration"
-            placeholder="Registration Date" aria-describedby="inputGroup-sizing-default" name="registration">
-        </div>
+          <div class="input-group mb-3">
+            <input type="text" id="registration" class="form-control" aria-label="registration"
+              placeholder="Registration Date" aria-describedby="inputGroup-sizing-default" name="registration">
+          </div>
 
-        <div class="input-group mb-3">
-          <input type="text" id="plate" class="form-control" aria-label="plate" placeholder="Plate Number"
-            aria-describedby="inputGroup-sizing-default" name="plate">
-        </div>
+          <div class="input-group mb-3">
+            <input type="text" id="plate" class="form-control" aria-label="plate" placeholder="Plate Number"
+              aria-describedby="inputGroup-sizing-default" name="plate">
+          </div>
 
-        <div class="input-group mb-3">
-          <input type="text" id="last-oil-change-date" class="form-control" aria-label="last-oil-change"
-            placeholder="Last Oil Change (Date)" aria-describedby="inputGroup-sizing-default" name="last_oil_change_date" onfocus="(this.type='date')" onblur="(this.type='text')">
-        </div>
+          <div class="input-group mb-3">
+            <input type="text" id="last-oil-change-date" class="form-control" aria-label="last-oil-change"
+              placeholder="Last Oil Change (Date)" aria-describedby="inputGroup-sizing-default"
+              name="last_oil_change_date" onfocus="(this.type='date')" onblur="(this.type='text')">
+          </div>
 
-        <div class="input-group mb-3">
-          <input type="text" id="last-oil-change-miles" class="form-control" aria-label="last-oil-change-mile"
-            placeholder="Last Oil Change (Mileage)" aria-describedby="inputGroup-sizing-default"
-            name="last_oil_change_miles">
-        </div>
+          <div class="input-group mb-3">
+            <input type="text" id="last-oil-change-miles" class="form-control" aria-label="last-oil-change-mile"
+              placeholder="Last Oil Change (Mileage)" aria-describedby="inputGroup-sizing-default"
+              name="last_oil_change_miles">
+          </div>
 
-        <div class="input-group mb-3">
-          <input type="text" id="tires-date" class="form-control" aria-label="tires-date" placeholder="New Tires (Date)"
-            aria-describedby="inputGroup-sizing-default" name="tires_date" onfocus="(this.type='date')" onblur="(this.type='text')">
-        </div>
+          <div class="input-group mb-3">
+            <input type="text" id="tires-date" class="form-control" aria-label="tires-date"
+              placeholder="New Tires (Date)" aria-describedby="inputGroup-sizing-default" name="tires_date"
+              onfocus="(this.type='date')" onblur="(this.type='text')">
+          </div>
 
-        <div class="input-group mb-3">
-          <input type="text" id="tires-miles" class="form-control" aria-label="tires-miles"
-            placeholder="New Tires (Mileage)" aria-describedby="inputGroup-sizing-default" name="tires_miles">
-        </div>
+          <div class="input-group mb-3">
+            <input type="text" id="tires-miles" class="form-control" aria-label="tires-miles"
+              placeholder="New Tires (Mileage)" aria-describedby="inputGroup-sizing-default" name="tires_miles">
+          </div>
 
-        <h6><span id="wrongInfo"></span></h6>
-        <a href="/garage">
-          <button class="mb-3" id="submit" name="submit">Submit</button>
-        </a>
+          <h6><span id="wrongInfo"></span></h6>
+          <a href="/garage">
+            <button class="mb-3" id="submit" name="submit">Submit</button>
+          </a>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade profile-modal" tabindex="-1" role="dialog" aria-labelledby="profileModal" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content p-5">
+      <div id="profile-toggle">
+        <button type="button" class="close text-right" data-dismiss="modal" aria-label="Close">
+          <span caria-hidden="true">&times;</span>
+        </button>
+        <form action="/api/profile" method="put">
+          <h2 class="font-weight-bold mb-3">Update Your Information</h2>
+          <div class="input-group mb-3">
+            <input type="text" id="first-name" class="form-control" aria-label="First Name" placeholder="First Name"
+              aria-describedby="inputGroup-sizing-default" name="First Name">
+          </div>
+
+          <div class="input-group mb-3">
+            <input type="text" id="last-name" class="form-control" aria-label="Last Name" placeholder="Last Name"
+              aria-describedby="inputGroup-sizing-default" name="Last Name">
+          </div>
+
+          <div class="ingit ut-group mb-3">
+            <input type="text" id="insurance-co" class="form-control" aria-label="insurance-co"
+              placeholder="Insurance Company" aria-describedby="inputGroup-sizing-default" name="insurance-co">
+          </div>
+
+          <div class="input-group mb-3">
+            <input type="text" id="insurance-date" class="form-control" aria-label="insurance-date"
+              placeholder="Insurance Expiration Date" aria-describedby="inputGroup-sizing-default"
+              name="insurance-date">
+          </div>
+
+          <div class="input-group mb-3">
+            <input type="text" id="profile-pic" class="form-control" aria-label="profile-pic"
+              placeholder="Profile Picture (link to jpg, png, bmp, etc.)" aria-describedby="inputGroup-sizing-default"
+              name="profile-pic">
+          </div>
+
+          <h6><span id="wrongInfo"></span></h6>
+          <a href="/garage">
+            <button class="mb-3" id="profile-submit" name="submit">Submit</button>
+          </a>
         </form>
       </div>
     </div>

@@ -6,12 +6,17 @@ module.exports = function (app) {
       res.render("home", { title: "Cartender - Maintenance Reminders made Easy"})
   });
 
+  // app.post("/register", function(req, res) {
+  //   console.log(req.body);
+  // });
+
   app.get("/garage", function(req, res) {
     db.vehicle.findAll({}).then((dbvehicle) => {
 
       res.render("garage", {title: "Cartender - My Garage", dbvehicle});
     })
   })
+
   // Load example page and pass in an example by id
   app.get("/example/:id", function (req, res) {
     db.vehicle.findOne({ where: { id: req.params.id } }).then(function (dbvehicle) {
