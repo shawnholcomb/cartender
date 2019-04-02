@@ -446,8 +446,9 @@ footer a:hover {
 
 /* Gas page */
 
-.fuel-switch {
-  margin-top: 100px;
+#viewDiv {
+  border-top: 2px solid #ff0051;
+  border-bottom: 2px solid #ff0051;
 }
 
 .fuel-gas,
