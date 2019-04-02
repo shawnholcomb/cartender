@@ -100,19 +100,19 @@
         <form method="post" action="api/register">
           <div class="input-group md-form mb-4">
             <input type="text" class="form-control" aria-label="Email" id="register-email" placeholder="Email"
-              name="registeremail" aria-describedby="inputGroup-sizing-default">
+              name="registeremail" aria-describedby="inputGroup-sizing-default" required>
           </div>
           <div class="input-group mb-4">
             <input type="password" class="form-control" aria-label="password" id="register-password"
-              placeholder="Create Password" name="registerpassword" aria-describedby="inputGroup-sizing-default">
+              placeholder="Create Password" name="registerpassword" aria-describedby="inputGroup-sizing-default" required>
           </div>
           <div class="input-group mb-4">
             <input type="text" class="form-control" aria-label="first-name" id="register-firstname"
-              placeholder="First Name" name="registerfirstname" aria-describedby="inputGroup-sizing-default">
+              placeholder="First Name" name="registerfirstname" aria-describedby="inputGroup-sizing-default" required>
           </div>
           <div class="input-group mb-4">
             <input type="text" class="form-control" aria-label="last-name" id="register-lastname"
-              placeholder="Last Name" name="registerlastname" aria-describedby="inputGroup-sizing-default">
+              placeholder="Last Name" name="registerlastname" aria-describedby="inputGroup-sizing-default" required>
           </div>
           <a href="/garage">
             <button class="mb-3" id="create-account">Create Account</button>
@@ -132,12 +132,12 @@
         <form method="post" action="/login">
           <div class="input-group mb-4">
             <input type="text" class="form-control" aria-label="Email" placeholder="Email" name="username"
-              aria-describedby="inputGroup-sizing-default">
+              aria-describedby="inputGroup-sizing-default" required>
           </div>
 
           <div class="input-group mb-4">
             <input type="password" class="form-control" aria-label="password" placeholder="Password" name="password"
-              aria-describedby="inputGroup-sizing-default">
+              aria-describedby="inputGroup-sizing-default" required>
           </div>
           <a href="/garage">
             <button class="mb-3" id="signin-button">Sign In</button>

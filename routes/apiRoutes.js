@@ -4,6 +4,7 @@ LocalStrategy = require("passport-local").Strategy;
 var bcrypt = require("bcrypt");
 
 // Pasport code to establish local strategy and check user login status
+
 passport.use(new LocalStrategy(
   function(username, password, done) {
     console.log('Passport local strategy');
@@ -30,9 +31,10 @@ passport.deserializeUser(function(id, done) {
   });
 });
 
-
 module.exports = function (app) {
+
   // Get all examples
+
   app.get("/api/garage", function (req, res) {
     db.vehicle.findAll({})
       .then((dbvehicle) => {
@@ -41,6 +43,7 @@ module.exports = function (app) {
   });
 
   // Create a new example
+
   app.post("/api/garage", function (req, res) {
     var { make, model, year, registration, vin, plate, last_oil_change_date, last_oil_change_miles, tires_date, tires_miles } = req.body;
     // var errors = [];
@@ -53,7 +56,6 @@ module.exports = function (app) {
 
   app.post("/api/register", function (req, res) {
     var hash = bcrypt.hashSync(req.body.registerpassword, 10);
-
     db.user.create({
       email: req.body.registeremail,
       password: hash,
@@ -65,6 +67,7 @@ module.exports = function (app) {
   });
 
   // Passport Login Function - currently troubleshooting
+
   app.post('/login',
     passport.authenticate('local', {
       successRedirect: '/garage',
@@ -73,16 +76,18 @@ module.exports = function (app) {
   );
 
   // Profile edit feature - currently non-functional
-  // app.put("/api/profile", function (req, res) {
+
+  // app.post("/api/profile", function (req, res) {
+  //   console.log(req.body);
+  //   db.user.update({ 
+
+  //   })
+  //     .then(function (dbvehicle) {
+  //       res.status(204).send();
+  //     })
   // });
 
-  // EXAMPLE CODE FROM STARTING TEMPLATE
-  // Delete an example by id
-  // app.delete("/api/examples/:id", function (req, res) {
-  //   db.vehicle.destroy({ where: { id: req.params.id } }).then(function (dbvehicle) {
-  //     res.json(dbvehicle);
-  //   });
-  // });
+  // Delete vehicle from garage
 
   app.delete("/api/delete/:id", function (req, res) {
     db.vehicle.destroy({
@@ -91,14 +96,15 @@ module.exports = function (app) {
       }
     })
       .then(function (dbPost) {
-        // res.render("/garage");
+        res.status(204).send();
       });
   });
 
   // Function for Passport
-  // function isLoggedIn(req, res, next) {
-  //   if (req.isAuthenticated())
-  //     return next();
-  //   res.redirect("/");
-  // }
+
+  function isLoggedIn(req, res, next) {
+    if (req.isAuthenticated())
+      return next();
+    res.redirect("/");
+  }
 };
