@@ -137,8 +137,10 @@
         </div>
 
         <div class="tab-pane fade" id="list-fuel" role="tabpanel" aria-labelledby="list-fuel-list">
-          <p>Fuel here</p>
           <a href="/map">My Fuel Map</a>
+          {{#each mygasfeed}}
+            <h6>{{this.address}}</h6>
+          {{/each}}
 
 
         </div>

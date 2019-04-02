@@ -57,29 +57,8 @@ function deleteVehicle() {
     })
 }
 
-  // $("#submit").on("click", ((e) => {
-  //   e.preventDefault();
-  //   var addVehicleForm = {
-  //     make: $("#make").val(),
-  //     model: $("#model").val(),
-  //     year: $("#year").val(),
-  //     registration: $("#registration").val(),
-  //     plate: $("#plate").val(),
-  //     lastOilChange: $("#last-oil-change").val(),
-  //     vin: $("#vin").val()
-  //   };
-  //   console.log(addVehicleForm);
-
-  //   $.ajax({
-  //     type: "POST",
-  //     url: "/api/garage",
-  //     data: addVehicleForm,
-  //     dataType: "JSON",
-  //     success: function (response) {
-  //       console.log("added vehicle")
-  //     },
-  //     complete: (() => {
-  //       location.reload();
-  //     })
-  //   });
-  // }))
+var url = "http://devapi.mygasfeed.com//stations/radius/32.776665/-96.796989/30/reg/price/rfej9napna.json";
+$.getJSON(url,
+  function (data) {
+      var mygasfeed = data.stations[0];
+      console.log(mygasfeed.address)
