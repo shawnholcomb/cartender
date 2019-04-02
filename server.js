@@ -6,6 +6,9 @@ var db = require("./models");
 
 var app = express();
 var PORT = process.env.PORT || 3000;
+var passport = require('passport');
+
+
 
 // Middleware
 app.use(express.urlencoded({ extended: false }));
@@ -20,6 +23,19 @@ app.engine(
   })
 );
 app.set("view engine", "handlebars");
+
+//Initialize the use of session
+app.use(require('express-session')(
+  { secret: '&bXD{-vXwJc88GZ', 
+    resave: true,
+    saveUninitialized: true 
+  }));
+
+// Initialize Passport
+app.use(passport.initialize());
+app.use(passport.session());
+
+
 
 // Routes
 require("./routes/apiRoutes")(app);
