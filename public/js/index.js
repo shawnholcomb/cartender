@@ -53,12 +53,15 @@ function deleteVehicle() {
     url: "/api/delete/" + id
   })
     .then(function (dbDelete) {
-      location.load();
+      location.reload();
+    }).catch(function (err) {
+      alert("An ercror occurred")
     })
 }
 
 var url = "http://devapi.mygasfeed.com//stations/radius/32.776665/-96.796989/30/reg/price/rfej9napna.json";
 $.getJSON(url,
   function (data) {
-      var mygasfeed = data.stations[0];
-      console.log(mygasfeed.address)
+    var mygasfeed = data.stations[0];
+    console.log(mygasfeed.address)
+  });

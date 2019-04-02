@@ -247,40 +247,6 @@ footer a:hover {
   color: #e80046;
 }
 
-@media screen and (max-width: 1199px) {
-  .display-3 {
-    font-size: 4rem;
-  }
-
-  .display-4 {
-    font-size: 3rem;
-  }
-}
-
-@media screen and (max-width: 991px) {
-  .display-3 {
-    font-size: 3rem;
-  }
-
-  .display-4 {
-    font-size: 2rem;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .display-3 {
-    font-size: 2rem;
-  }
-
-  .card-icon {
-    font-size: 40px;
-  }
-
-  .card h4 {
-    font-size: 1.2rem;
-    margin-left: 10px;
-  }
-}
 
 /* Garage Page */
 
@@ -319,10 +285,10 @@ footer a:hover {
 }
 
 .list-group-item.active {
-background: rgba(0, 0, 0, 0.25);
-border: none;
-border-radius: 30px 0 0 30px;
-text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.25);
+  border: none;
+  border-radius: 30px 0 0 30px;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 }
 
 .garage-column i {
@@ -350,16 +316,18 @@ text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
   padding: 25px;
 }
 
-#edit {
+#edit,
+#signout {
   background: none;
   border: 2px solid #fff;
   color: #fff;
   font-size: 18px;
-  padding: 10px 25px;
+  padding: 8px 20px;
   max-width: 150px;
 }
 
-#edit:active {
+#edit:active,
+#signout:active {
   border: 2px solid #e80046;
   color: #e80046;
 }
@@ -441,18 +409,18 @@ text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 
 #confirm-delete,
 #cancel-delete {
-    width: 10%;
-    background: #ff0051;
-    color: #fff;
-    border-radius: 10px;
-    padding: 15px;
-    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.25);
+  width: 10%;
+  background: #ff0051;
+  color: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.25);
 }
 
 #list-shops,
 #list-settings {
   background-size: 100%;
-  min-height: 46vh;
+  min-height: 45vh;
   color: #fff;
   text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.4);
   padding-top: 10%;
@@ -510,8 +478,40 @@ text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
   margin-left: 0;
 }
 
+@media screen and (max-width: 1199px) {
+  .display-3 {
+    font-size: 4rem;
+  }
 
+  .display-4 {
+    font-size: 3rem;
+  }
+}
 
+@media screen and (max-width: 991px) {
+  .display-3 {
+    font-size: 3rem;
+  }
+
+  .display-4 {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .display-3 {
+    font-size: 2rem;
+  }
+
+  .card-icon {
+    font-size: 40px;
+  }
+
+  .card h4 {
+    font-size: 1.2rem;
+    margin-left: 10px;
+  }
+}
 
 @media screen and (max-width: 575px) {
   .row {

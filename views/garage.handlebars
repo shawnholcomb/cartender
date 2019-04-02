@@ -19,8 +19,8 @@
       <div class="list-group" id="list-tab" role="tablist">
         <a class="list-group-item list-group-item-action active" id="list-garage-list" data-toggle="list"
           href="#list-garage" role="tab" aria-controls="home"><i class="fas fa-file-alt"></i>My Garage</a>
-        <a class="list-group-item list-group-item-action" id="list-fuel-list" data-toggle="list" href="#list-fuel"
-          role="tab" aria-controls="messages"><i class="fas fa-gas-pump"></i>Find Fuel</a>
+        <a class="list-group-item list-group-item-action" id="list-fuel-list" href="/map" target="_blank" role="tab"><i
+            class="fas fa-gas-pump"></i>Find Fuel</a>
         <a class="list-group-item list-group-item-action" id="list-shops-list" data-toggle="list" href="#list-shops"
           role="tab" aria-controls="profile"><i class="fas fa-oil-can"></i>Find Shops</a>
         <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list"
@@ -42,6 +42,7 @@
           <div class="col-6 profile-text d-flex flex-column justify-content-between">
             <h3 class="mb-3">0 notifications<i class="fas fa-bell ml-3"></i></h3>
             <button class="nav-link" data-toggle="modal" data-target=".profile-modal" id="edit">Edit Profile</button>
+            <button class="nav-link" id="signout">Sign Out</button>
           </div>
         </div>
       </div>
@@ -86,9 +87,7 @@
                       </tr>
                       <tr>
                         <td> Mileage:</td>
-
                         <td>{{this.last_oil_change_miles}}</td>
-
                       </tr>
                       <tr>
                         <td class="pb-0"><button class="reminder" id="oil-change-reminder"><i
@@ -103,20 +102,18 @@
                     <table class="inner-table">
                       <tr>
                         <td>Date:</td>
-
                         <td>{{this.tires_date}}</td>
                       </tr>
                       <tr>
                         <td> Mileage:</td>
                         <td class="pb-0">{{this.tires_miles}}</td>
-
                       </tr>
                     </table>
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <h6 class="delete-link" data-id="{{{this.id}}}">DELETE THIS VEHICLE
+                    <h6 class="delete-link" data-id="{{{this.id}}}"><i class="fas fa-trash-alt"></i> DELETE THIS VEHICLE
                     </h6>
                   </td>
                 </tr>
@@ -139,7 +136,7 @@
         <div class="tab-pane fade" id="list-fuel" role="tabpanel" aria-labelledby="list-fuel-list">
           <a href="/map">My Fuel Map</a>
           {{#each mygasfeed}}
-            <h6>{{this.address}}</h6>
+          <h6>{{this.address}}</h6>
           {{/each}}
 
 
@@ -169,35 +166,36 @@
 
           <div class="input-group mb-3">
             <input type="text" id="year" class="form-control" aria-label="year" placeholder="Year"
-              aria-describedby="inputGroup-sizing-default" name="year">
+              aria-describedby="inputGroup-sizing-default" name="year" required>
           </div>
 
           <div class="input-group mb-3">
             <input type="text" id="make" class="form-control" aria-label="make" placeholder="Make"
-              aria-describedby="inputGroup-sizing-default" name="make">
+              aria-describedby="inputGroup-sizing-default" name="make" required>
           </div>
 
           <div class="ingit ut-group mb-3">
             <input type="text" id="model" class="form-control" aria-label="model" placeholder="Model"
-              aria-describedby="inputGroup-sizing-default" name="model">
+              aria-describedby="inputGroup-sizing-default" name="model" required>
           </div>
 
           <div class="input-group mb-3">
             <input type="text" id="vin" class="form-control" aria-label="vin" placeholder="Vin Number"
               aria-describedby="inputGroup-sizing-default" name="vin">
-         
-
-          <div class="input-group mb-3">
-            <input type="text" id="plate" class="form-control" aria-label="plate" placeholder="Plate Number"
-              aria-describedby="inputGroup-sizing-default" name="plate">
           </div>
 
           <div class="input-group mb-3">
-            <input type="text" 
-            
-            
-            
-            id="last-oil-change-date" class="form-control" aria-label="last-oil-change"
+            <input type="text" id="plate" class="form-control" aria-label="plate" placeholder="Plate Number"
+              aria-describedby="inputGroup-sizing-default" name="plate" required>
+          </div>
+
+          <div class="input-group mb-3">
+            <input type="text" id="registration" class="form-control" aria-label="registration"
+              placeholder="Registration Date" aria-describedby="inputGroup-sizing-default" name="registration" required>
+          </div>
+
+          <div class="input-group mb-3">
+            <input type="text" id="last-oil-change-date" class="form-control" aria-label="last-oil-change"
               placeholder="Last Oil Change (Date)" aria-describedby="inputGroup-sizing-default"
               name="last_oil_change_date" onfocus="(this.type='date')" onblur="(this.type='text')">
           </div>
@@ -221,7 +219,7 @@
 
           <h6><span id="wrongInfo"></span></h6>
           <a href="/garage">
-            <button class="mb-3" id="submit" name="submit">Submit</button>
+            <button id="submit" name="submit">Submit</button>
           </a>
         </form>
       </div>
@@ -274,5 +272,3 @@
     </div>
   </div>
 </div>
-
-{{!-- http://devapi.mygasfeed.com//stations/radius/32.776665/-96.796989/30/reg/price/rfej9napna.json --}}
