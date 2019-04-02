@@ -17,6 +17,11 @@ module.exports = function (app) {
     })
   })
 
+  
+  app.get("/map", function(req, res) {
+    res.render("map", {title: "Cartender- My Map"})
+  })
+
   // Load example page and pass in an example by id
   app.get("/example/:id", function (req, res) {
     db.vehicle.findOne({ where: { id: req.params.id } }).then(function (dbvehicle) {

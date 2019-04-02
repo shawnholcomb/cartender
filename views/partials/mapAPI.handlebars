@@ -1,5 +1,24 @@
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>{{title}}</title>
+<style>
+  html,
+  body,
+  #viewDiv {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+  }
 
-  <div style="width: 640px; height: 480px" id="mapContainer"></div>
+  #viewDiv {
+    max-width: 900px;
+    max-height: 500px;
+  }
+</style>
 
+<div id="viewDiv"></div>
 
-  <script src="/js/map.js"></script>
+<link rel="stylesheet" href="https://js.arcgis.com/4.11/esri/css/main.css">
+
+<script src="https://js.arcgis.com/4.11/"></script>
+<script src="/js/map.js"></script>

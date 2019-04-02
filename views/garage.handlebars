@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light">
+<nav class="navbar navbar-expand-lg navbar-light ">
   <div class="d-flex flex-grow-1">
     <span class="w-100 d-lg-none d-block">
       <!-- hidden spacer to center brand on mobile --></span>
@@ -109,6 +109,7 @@
                       <tr>
                         <td> Mileage:</td>
                         <td class="pb-0">{{this.tires_miles}}</td>
+
                       </tr>
                     </table>
                   </td>
@@ -124,7 +125,6 @@
           </div>
 
           {{/each}}
-
           <div class="fuel-switch">
             <button class="fuel-gas active">
               <i class="fas fa-gas-pump"></i>
@@ -133,10 +133,14 @@
               <i class="fas fa-bolt"></i>
             </button>
           </div>
+
         </div>
 
         <div class="tab-pane fade" id="list-fuel" role="tabpanel" aria-labelledby="list-fuel-list">
           <p>Fuel here</p>
+          <a href="/map">My Fuel Map</a>
+
+
         </div>
         <div class="tab-pane fade mx-auto" id="list-shops" role="tabpanel" aria-labelledby="list-shops-list">
           <h1 class="coming-soon">COMING SOON</h1>
@@ -179,12 +183,7 @@
           <div class="input-group mb-3">
             <input type="text" id="vin" class="form-control" aria-label="vin" placeholder="Vin Number"
               aria-describedby="inputGroup-sizing-default" name="vin">
-          </div>
-
-          <div class="input-group mb-3">
-            <input type="text" id="registration" class="form-control" aria-label="registration"
-              placeholder="Registration Date" aria-describedby="inputGroup-sizing-default" name="registration">
-          </div>
+         
 
           <div class="input-group mb-3">
             <input type="text" id="plate" class="form-control" aria-label="plate" placeholder="Plate Number"
@@ -192,7 +191,11 @@
           </div>
 
           <div class="input-group mb-3">
-            <input type="text" id="last-oil-change-date" class="form-control" aria-label="last-oil-change"
+            <input type="text" 
+            
+            
+            
+            id="last-oil-change-date" class="form-control" aria-label="last-oil-change"
               placeholder="Last Oil Change (Date)" aria-describedby="inputGroup-sizing-default"
               name="last_oil_change_date" onfocus="(this.type='date')" onblur="(this.type='text')">
           </div>
@@ -269,3 +272,5 @@
     </div>
   </div>
 </div>
+
+{{!-- http://devapi.mygasfeed.com//stations/radius/32.776665/-96.796989/30/reg/price/rfej9napna.json --}}
