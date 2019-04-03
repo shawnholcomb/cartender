@@ -19,7 +19,6 @@ $("#addCar").on("click", function () {
 // Functions to toggle car details open/closed
 
 $(".vehicle-name").on("click", function () {
-
   var dataId = $(this).attr("id");
   $(".plus-" + dataId).toggle();
   $(".minus-" + dataId).toggle();

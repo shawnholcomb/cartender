@@ -512,6 +512,56 @@ footer a:hover {
     font-size: 1.2rem;
     margin-left: 10px;
   }
+
+  .garage-column {
+    margin-top: 20px;
+  }
+
+  .profile-image {
+    display: flex;
+    justify-content: center;
+  }
+
+  #prof-pic {
+    margin-left: 0;
+  }
+
+  .profile-text {
+    text-align: center;
+  }
+
+  #buttons-in-div {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .vehicle-details {
+    font-size: 14px;
+  }
+  
+  .vehicle-details td {
+    padding: 8px;
+  }
+  
+  .inner-table td {
+    min-width: 100px;
+    padding: 0 0 5px 0;
+  }
+
+  .apple {
+    width: 30%;
+    height: 30%;
+    margin-right: 10px;
+  }
+  
+  .google {
+    width: 34%;
+    height: 34%;
+  }
+
+  .reminder {
+    padding: 4px 15px;
+  }
 }
 
 @media screen and (max-width: 575px) {

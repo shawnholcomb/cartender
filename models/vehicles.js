@@ -1,4 +1,3 @@
-var moment = require("moment");
 module.exports = function(sequelize, DataTypes) {
   var vehicle = sequelize.define("vehicle", {
     make: {
