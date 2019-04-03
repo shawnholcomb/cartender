@@ -58,9 +58,6 @@ function deleteVehicle() {
     })
 }
 
-var url = "http://devapi.mygasfeed.com//stations/radius/32.776665/-96.796989/30/reg/price/rfej9napna.json";
-$.getJSON(url,
-  function (data) {
-    var mygasfeed = data.stations[0];
-    console.log(mygasfeed.address)
-  });
+$(".reminder").on("click", function() {
+
+})

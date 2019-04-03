@@ -10,7 +10,7 @@ require([
 
 
   var map = new Map({
-    basemap: "streets-navigation-vector"
+    basemap: "streets"
   });
 
   var view = new MapView({
@@ -33,8 +33,12 @@ require([
     type: "simple",  // autocasts as new SimpleRenderer()
     symbol: {
       type: "simple-marker",  // autocasts as new SimpleMarkerSymbol()
-      size: 8,
-      color: "grey"
+      size: 10,
+      color: "#32CD32",
+      outline: {
+        color: "#ffffff",
+        width: "1.5px"
+      }
     }
   };
   var cityRender = new FeatureLayer({
@@ -58,8 +62,10 @@ require([
   });
 
   // Add the layer
-  map.add(stationLayer, 2);
-  // search for places
+
+  map.add(stationLayer, 0);
+// search for places
+
   var places = ["Gas station"];
 
   var select = document.createElement("select", "");
@@ -72,6 +78,43 @@ require([
 
   var locator = new Locator({
     url: "http://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer"
+
+ });
+
+ // Find places and add them to the map
+ function findPlaces(category, pt) {
+  locator.addressToLocations({
+    location: pt,
+    categories: [category],
+    maxLocations: 125,
+    outFields: ["Place_addr", "PlaceName"]
+  })
+  .then(function(results) {
+    // Clear the map
+    view.popup.close();
+    view.graphics.removeAll();
+    // Add graphics
+    results.forEach(function(result){
+      view.graphics.add(
+        new Graphic({
+          attributes: result.attributes,
+          geometry: result.location,
+          symbol: {
+           type: "simple-marker",
+           color: "#ff0051",
+           size: "15px",
+           outline: {
+             color: "#ffffff",
+             width: "1.5px"
+           }
+          },
+          popupTemplate: {
+            title: "{PlaceName}",
+            content: "{Place_addr}"
+          }
+       }));
+    });
+
   });
 
   // Find places and add them to the map
