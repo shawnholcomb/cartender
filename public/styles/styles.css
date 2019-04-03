@@ -547,10 +547,21 @@ footer a:hover {
     min-width: 100px;
     padding: 0 0 5px 0;
   }
-}
 
-@media screen and (max-width: 700px) {
+  .apple {
+    width: 30%;
+    height: 30%;
+    margin-right: 10px;
+  }
   
+  .google {
+    width: 34%;
+    height: 34%;
+  }
+
+  .reminder {
+    padding: 4px 15px;
+  }
 }
 
 @media screen and (max-width: 575px) {
