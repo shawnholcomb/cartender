@@ -1,5 +1,16 @@
 var db = require("../models");
+// var cron = require('node-cron');
+ 
+// cron.schedule('0 1 * * *', () => {
+//   console.log('Runing a job at 01:00 at America/Sao_Paulo timezone');
+// }, {
+//   scheduled: true,
+//   timezone: "America/Sao_Paulo"
+// });
 
+// cron.schedule('1 * * * * * * *', () => {
+//   console.log('running every minute 1, 2, 4 and 5');
+// });
 module.exports = function (app) {
   // Load index page
   app.get("/", function (req, res) {

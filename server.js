@@ -1,4 +1,5 @@
 require("dotenv").config();
+
 var express = require("express");
 var exphbs = require("express-handlebars");
 
@@ -34,8 +35,6 @@ app.use(require('express-session')(
 // Initialize Passport
 app.use(passport.initialize());
 app.use(passport.session());
-
-
 
 // Routes
 require("./routes/apiRoutes")(app);
