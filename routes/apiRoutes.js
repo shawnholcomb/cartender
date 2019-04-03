@@ -6,27 +6,27 @@ var bcrypt = require("bcrypt");
 // Pasport code to establish local strategy and check user login status
 
 passport.use(new LocalStrategy(
-  function(username, password, done) {
+  function (username, password, done) {
     console.log('Passport local strategy');
     console.log(username, password);
-    db.user.findOne({where: { email: username }}).then((user, err) => {
+    db.user.findOne({ where: { email: username } }).then((user, err) => {
       if (err) { throw err; }
       if (!user) { return done(null, false); }
-      if(!bcrypt.compareSync(password, user.password)) {
+      if (!bcrypt.compareSync(password, user.password)) {
         return done(null, false);
-       } 
-       console.log('Found user!');
+      }
+      console.log('Found user!');
       return done(null, user);
     });
   }
 ));
 
-passport.serializeUser(function(user, done) {
+passport.serializeUser(function (user, done) {
   done(null, user.id);
 });
- 
-passport.deserializeUser(function(id, done) {
-  db.user.findOne({where: {id: id}}).then((user, err) => {
+
+passport.deserializeUser(function (id, done) {
+  db.user.findOne({ where: { id: id } }).then((user, err) => {
     done(err, user);
   });
 });

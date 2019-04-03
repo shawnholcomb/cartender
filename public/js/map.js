@@ -5,7 +5,7 @@ require([
   "esri/views/MapView",
   "esri/tasks/Locator",
   "esri/Graphic"
-  
+
 ], function (Track, FeatureLayer, Map, MapView, Locator, Graphic) {
 
 
@@ -43,9 +43,6 @@ require([
   });
   map.add(cityRender);
 
-
-
-
   //*** ADD ***//
   // Define a popup for Trailheads
   var stationCard = {
@@ -62,11 +59,11 @@ require([
 
   // Add the layer
   map.add(stationLayer, 2);
-// search for places
+  // search for places
   var places = ["Gas station"];
 
-  var select = document.createElement("select","");
-  places.forEach(function(p){
+  var select = document.createElement("select", "");
+  places.forEach(function (p) {
     var option = document.createElement("option");
     option.value = p;
     option.innerHTML = p;
@@ -75,61 +72,61 @@ require([
 
   var locator = new Locator({
     url: "http://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer"
- });
-
- // Find places and add them to the map
- function findPlaces(category, pt) {
-  locator.addressToLocations({
-    location: pt,
-    categories: [category],
-    maxLocations: 125,
-    outFields: ["Place_addr", "PlaceName"]
-  })
-  .then(function(results) {
-    // Clear the map
-    view.popup.close();
-    view.graphics.removeAll();
-    // Add graphics
-    results.forEach(function(result){
-      view.graphics.add(
-        new Graphic({
-          attributes: result.attributes,
-          geometry: result.location,
-          symbol: {
-           type: "simple-marker",
-           color: "#000000",
-           size: "10px",
-           outline: {
-             color: "#ffffff",
-             width: "1.5px"
-           }
-          },
-          popupTemplate: {
-            title: "{PlaceName}",
-            content: "{Place_addr}"
-          }
-       }));
-    });
   });
-}
 
-// Search for places in center of map when the app loads
-findPlaces(select.value, view.center);
+  // Find places and add them to the map
+  function findPlaces(category, pt) {
+    locator.addressToLocations({
+      location: pt,
+      categories: [category],
+      maxLocations: 125,
+      outFields: ["Place_addr", "PlaceName"]
+    })
+      .then(function (results) {
+        // Clear the map
+        view.popup.close();
+        view.graphics.removeAll();
+        // Add graphics
+        results.forEach(function (result) {
+          view.graphics.add(
+            new Graphic({
+              attributes: result.attributes,
+              geometry: result.location,
+              symbol: {
+                type: "simple-marker",
+                color: "#000000",
+                size: "10px",
+                outline: {
+                  color: "#ffffff",
+                  width: "1.5px"
+                }
+              },
+              popupTemplate: {
+                title: "{PlaceName}",
+                content: "{Place_addr}"
+              }
+            }));
+        });
+      });
+  }
 
-// Listen for category changes and find places
-select.addEventListener('change', function (event) {
-  findPlaces(event.target.value, view.center);
-});
+  // Search for places in center of map when the app loads
+  findPlaces(select.value, view.center);
 
-// Listen for mouse clicks and find places
-view.on("click", function(event){
-  view.hitTest(event.screenPoint)
-    .then(function(response){
-      if (response.results.length < 2) { // If graphic is not clicked, find places
-        findPlaces(select.options[select.selectedIndex].text, event.mapPoint);
-      }
-  })
-});
+  // Listen for category changes and find places
+  select.addEventListener('change', function (event) {
+    findPlaces(event.target.value, view.center);
+  });
+
+  // Listen for mouse clicks and find places
+  view.on("click", function (event) {
+    view.hitTest(event.screenPoint)
+      .then(function (response) {
+        if (response.results.length < 2) { // If graphic is not clicked, find places
+          findPlaces(select.options[select.selectedIndex].text, event.mapPoint);
+        }
+      })
+  });
 
   view.ui.add(select, "top-right");
 });

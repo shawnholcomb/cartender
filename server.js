@@ -8,8 +8,6 @@ var app = express();
 var PORT = process.env.PORT || 3000;
 var passport = require('passport');
 
-
-
 // Middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -34,8 +32,6 @@ app.use(require('express-session')(
 // Initialize Passport
 app.use(passport.initialize());
 app.use(passport.session());
-
-
 
 // Routes
 require("./routes/apiRoutes")(app);
