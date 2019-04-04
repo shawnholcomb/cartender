@@ -19,9 +19,7 @@ Sign Up page
 # Technologies Used
 HTML, CSS, Javascript, JQuery, Bootstrap<br>
 Node, Express, Sequelize, Passport
-My Gas Buddy API<br>
-NREL API (for alternative fuel)<br>
-Google Maps/Geocoding API
+ARCGIS Mapping API
 
 # Tasks
 Organized via GitHub Projects https://github.com/shawnholcomb/project-one/projects/2
