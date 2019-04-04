@@ -18,7 +18,7 @@ Sign Up page
 
 # Technologies Used
 HTML, CSS, Javascript, JQuery, Bootstrap<br>
-Node, Express, Sequelize, Passport
+Node, Express, Sequelize, Passport<br>
 ARCGIS Mapping API
 
 # Tasks
