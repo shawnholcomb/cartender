@@ -7,13 +7,15 @@ var bcrypt = require("bcrypt");
 
 passport.use(new LocalStrategy(
   function (username, password, done) {
-    console.log('Passport local strategy');
-    console.log(username, password);
     db.user.findOne({ where: { email: username } }).then((user, err) => {
-      if (err) { throw err; }
-      if (!user) { return done(null, false); }
+      if (err) {
+        throw err;
+      }
+      if (!user) {
+        return done(null, false, { message: 'Invalid username' });
+      }
       if (!bcrypt.compareSync(password, user.password)) {
-        return done(null, false);
+        return done(null, false, { message: 'Invalid password' });
       }
       console.log('Found user!');
       return done(null, user);
@@ -66,7 +68,7 @@ module.exports = function (app) {
     })
   });
 
-  // Passport Login Function - currently troubleshooting
+  // Passport Login Function 
 
   app.post('/login',
     passport.authenticate('local', {
@@ -100,11 +102,6 @@ module.exports = function (app) {
       });
   });
 
-  // Function for Passport
 
-  function isLoggedIn(req, res, next) {
-    if (req.isAuthenticated())
-      return next();
-    res.redirect("/");
-  }
+
 };

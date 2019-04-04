@@ -58,6 +58,16 @@ function deleteVehicle() {
     })
 }
 
-$(".reminder").on("click", function() {
+// Sign out functionality
 
-})
+$("#signout").on("click", signOut);
+
+function signOut() {
+  $.ajax({
+    method: "GET",
+    url: "/logout"
+  })
+    .then(function (dbDelete) {
+      location.reload();
+    })
+}

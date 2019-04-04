@@ -323,7 +323,7 @@ footer a:hover {
   color: #fff;
   font-size: 18px;
   padding: 8px 20px;
-  max-width: 150px;
+  width: 140px;
 }
 
 #edit:active,
@@ -463,8 +463,17 @@ footer a:hover {
 .fuel-gas.active, 
 .fuel-electric.active {
   background: rgba(0, 0, 0, 0.25);
-  color: #fff;
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.fuel-gas.active {
+  color: #ff0051;
+
+}
+
+.fuel-electric.active {
+  color: #32cd32;
+
 }
 
 .fuel-gas {
