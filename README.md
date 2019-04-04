@@ -1,6 +1,6 @@
 #NOTE: Change password in config file for the db
 
-![Cartender Logo](http://i68.tinypic.com/33jpx92.jpg)<br/>
+![Cartender Logo](http://i64.tinypic.com/9pypgm.jpg)<br/>
 Shawn Holcomb, Eryn Monestero, Julio Balbuena
 
 # Description
@@ -16,7 +16,9 @@ Sign Up page
 "Garage" page
 ![Garage Page](http://i64.tinypic.com/2afz9j8.jpg)
 
-# APIs Used
+# Technologies Used
+HTML, CSS, Javascript, JQuery, Bootstrap<br>
+Node, Express, Sequelize, Passport
 My Gas Buddy API<br>
 NREL API (for alternative fuel)<br>
 Google Maps/Geocoding API
@@ -25,4 +27,4 @@ Google Maps/Geocoding API
 Organized via GitHub Projects https://github.com/shawnholcomb/project-one/projects/2
 
 # Deployed Site
-tbd
+https://car-tender.herokuapp.com/

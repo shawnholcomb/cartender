@@ -2,25 +2,10 @@
 <title>{{title}}</title>
 
 <link rel="stylesheet" href="https://js.arcgis.com/4.11/esri/css/main.css">
+<link rel="stylesheet" href="/styles/map.css">
 
 <script src="https://js.arcgis.com/4.11/"></script>
 <script src="/js/map.js"></script>
-
-<style>
-  html,
-  body,
-  #viewDiv {
-    padding: 0;
-    margin: 0;
-    height: 100%;
-    width: 100%;
-  }
-
-  #viewDiv {
-    max-width: 100%;
-    max-height: 500px;
-  }
-</style>
 
 <nav class="navbar navbar-expand-lg navbar-light ">
   <div class="d-flex flex-grow-1">
@@ -34,7 +19,7 @@
 
 <div id="viewDiv"></div>
 
-<div class="row d-flex justify-content-center mt-3">
+<div class="row d-flex justify-content-center mt-4">
   <div class="fuel-switch">
     <button class="fuel-gas">
       <i class="fas fa-gas-pump"></i>

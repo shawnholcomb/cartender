@@ -10,7 +10,7 @@
 
 <div class="garage-body">
   <div class="row no-gutters garage-body-row">
-    <div class="col-2 pl-3 pr-0 bg-white garage-column">
+    <div class="col-lg-2 col-md-3 order-md-1 order-2 pl-3 pr-0 bg-white garage-column">
       <div id="add-new">
         <a class="nav-link" data-toggle="modal" data-target=".addVehicle-modal"><i class="fas fa-plus"></i>Add
           Vehicle</a>
@@ -27,22 +27,24 @@
           href="#list-settings" role="tab" aria-controls="settings"><i class="fas fa-cog"></i>Settings</a>
       </div>
     </div>
-    <div class="col-10">
+    <div class="col-lg-10 col-md-9 order-md-2 order-1">
       <div class="profile mx-0">
         <div class="row no-gutters">
-          <div class="col-2 profile-image">
+          <div class="col-md-2 col-sm-12 profile-image">
             <img src="/images/profile-image.jpg" id="prof-pic">
           </div>
-          <div class="col-4 profile-text">
+          <div class="col-md-4 col-sm-6 col-xs-12 profile-text">
             <h2 class="mb-3">John's Garage</h2>
             <h4 class="mb-3">1 Vehicle</h3>
               <h5>Insurance: State Farm</h5>
               <h5>Insurance Expires: 7/2019</h5>
           </div>
-          <div class="col-6 profile-text d-flex flex-column justify-content-between">
+          <div class="col-md-6 col-sm-6 col-xs-12 profile-text d-flex flex-column justify-content-between">
             <h3 class="mb-3">0 notifications<i class="fas fa-bell ml-3"></i></h3>
-            <button class="nav-link" data-toggle="modal" data-target=".profile-modal" id="edit">Edit Profile</button>
-            <button class="nav-link" id="signout">Sign Out</button>
+            <div id="buttons-in-div">
+              <button class="nav-link" data-toggle="modal" data-target=".profile-modal" id="edit">Edit Profile</button>
+              <button class="nav-link" id="signout">Sign Out</button>
+            </div>
           </div>
         </div>
       </div>
@@ -122,14 +124,6 @@
           </div>
 
           {{/each}}
-          {{!-- <div class="fuel-switch">
-            <button class="fuel-gas active">
-              <i class="fas fa-gas-pump"></i>
-            </button>
-            <button class="fuel-electric">
-              <i class="fas fa-bolt"></i>
-            </button>
-          </div> --}}
 
         </div>
 

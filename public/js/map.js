@@ -97,6 +97,7 @@ require([
         }
       ]
     }
+
   
     // Create the layer and set the popup
     var stationLayer = new FeatureLayer({
@@ -136,8 +137,10 @@ function renderGasStations() {
               geometry: result.location,
               symbol: {
                 type: "simple-marker",
+
                 color: "#ff0051",
                 size: "15px",
+
                 outline: {
                   color: "#ffffff",
                   width: "1.5px"
@@ -153,6 +156,7 @@ function renderGasStations() {
   }
 
   // Search for places in center of map when the app loads
+
   findPlaces("Gas station", view.center);
 
   // Listen for mouse clicks and find places
@@ -172,5 +176,6 @@ $(".fa-gas-pump").on("click", function() {
 $(".fuel-electric").on("click", function() {
   $(renderElectricStations()).toggle();
 })
+
 
 });
