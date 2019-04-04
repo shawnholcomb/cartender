@@ -460,20 +460,18 @@ footer a:hover {
   float: left;
 }
 
-.fuel-gas.active, 
-.fuel-electric.active {
-  background: rgba(0, 0, 0, 0.25);
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
-}
-
-.fuel-gas.active {
+.fuel-gas {
   color: #ff0051;
-
 }
 
-.fuel-electric.active {
+.fuel-electric {
   color: #32cd32;
+}
 
+.fuel-gas:hover, 
+.fuel-electric:hover {
+  background: rgba(0, 0, 0, 0.15);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .fuel-gas {

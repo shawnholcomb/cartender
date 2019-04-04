@@ -25,21 +25,20 @@ $(".vehicle-name").on("click", function () {
   $("." + dataId).toggle();
 })
 
-// Fuel type toggle function
+// Fuel type toggle function - currently troubleshooting map toggle
 
-$(".fuel-gas").on("click", function () {
-  $(".fuel-gas").addClass("active");
-  $(".fuel-electric").removeClass("active");
-});
+// $(".fuel-gas").on("click", function () {
+//   $(".fuel-gas").addClass("active");
+//   $(".fuel-electric").removeClass("active");
+// });
 
-$(".fuel-electric").on("click", function () {
-  $(".fuel-electric").addClass("active");
-  $(".fuel-gas").removeClass("active");
-});
+// $(".fuel-electric").on("click", function () {
+//   $(".fuel-electric").addClass("active");
+//   $(".fuel-gas").removeClass("active");
+// });
 
-$("#confirm-delete").on("click", function () {
-  console.log(this);
-})
+// $("#confirm-delete").on("click", function () {
+// })
 
 // Delete functionality
 
