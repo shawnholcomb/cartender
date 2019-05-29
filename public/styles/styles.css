@@ -507,6 +507,15 @@ footer a:hover {
 }
 
 @media screen and (max-width: 767px) {
+
+  .navbar {
+    background: #ff0051;
+  }
+
+  #nav-logo {
+    color: #fff;
+  }
+
   .display-3 {
     font-size: 2rem;
   }
