@@ -18,13 +18,11 @@ Sign Up page
 
 # Technologies Used
 HTML, CSS, Javascript, JQuery, Bootstrap<br>
-Node, Express, Sequelize, Passport
-My Gas Buddy API<br>
-NREL API (for alternative fuel)<br>
-Google Maps/Geocoding API
+Node, Express, Sequelize, Passport<br>
+ARCGIS Mapping API
 
 # Tasks
-Organized via GitHub Projects https://github.com/shawnholcomb/project-one/projects/2
+Organized via GitHub Projects https://github.com/shawnholcomb/cartender/projects/2
 
 # Deployed Site
 https://car-tender.herokuapp.com/
