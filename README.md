@@ -1,6 +1,5 @@
-#NOTE: Change password in config file for the db
-
 ![Cartender Logo](http://i64.tinypic.com/9pypgm.jpg)<br/>
+
 Click below for video walkthrough of this application.<br />
 [![CarTender Demp Video](http://img.youtube.com/vi/itKV-fXblYk/0.jpg)](https://www.youtube.com/watch?v=itKV-fXblYk&feature=youtu.be "CarTender Demo Video")<br />
 
