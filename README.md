@@ -1,7 +1,7 @@
 ![Cartender Logo](http://i64.tinypic.com/9pypgm.jpg)<br/>
 
 Click below for video walkthrough of this application.<br />
-[![CarTender Demp Video](http://img.youtube.com/vi/itKV-fXblYk/0.jpg)](https://www.youtube.com/watch?v=itKV-fXblYk&feature=youtu.be "CarTender Demo Video")<br />
+[![CarTender Demo Video](http://img.youtube.com/vi/itKV-fXblYk/0.jpg)](https://www.youtube.com/watch?v=itKV-fXblYk&feature=youtu.be "CarTender Demo Video")<br />
 
 # Description
 CARtender is a web application that helps organize your automotive maintenance and other miscellaneous tasks.  Track the dates and mileage of oil changes, tire changes and other repairs and set up reminders so you never forget them again.  Include all of the vehicles in your fleet and ensure your investments are protected.  Cartender also provides location and fuel prices for nearby gas stations and repair shop locations when you really need a hand.
